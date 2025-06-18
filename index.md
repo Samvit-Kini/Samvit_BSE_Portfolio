@@ -83,13 +83,11 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
 # Starter Project: RGB Sliders
-The starter project I chose was the RGB sliders. I chose this because building these sliders will help me practice essential skills like soldering before I start my main project. There are three sliders in my project, one controlling red light, one controlling blue, and one controlling green. These LED lights are powered by a charger via the USB port located on the top right of the sliders. The three LEDs' lights blend together into one color allowing the sliders to emmit a spectrum of colors. 
-
-A chalenge I faced was that sometimes the solder sometimes spilled into another spot, creating a connection between two pins which is a problem. To deal with this problem, I had to remove the solder. Which led me to use the desoldering tool, which sucked the solder out when the solder was at a liquid state. I soon succesfully removed all the mistake, allowing me to re-solder and complete the project. This challenge helped me master desoldering, which is benificial if I make a mistake in any of my future projects. 
+The starter project I chose was the RGB sliders. I chose this because building these sliders will help me practice essential skills like soldering before I start my main project. There are three sliders in my project, one controlling red light, one controlling blue, and one controlling green. These LED lights are powered by a charger via the USB port located on the top right of the sliders. The three LEDs' lights blend together into one color allowing the sliders to emmit a spectrum of colors. A chalenge I faced was that sometimes the solder sometimes spilled into another spot, creating a connection between two pins which is a problem. To deal with this problem, I had to remove the solder. Which led me to use the desoldering tool, which sucked the solder out when the solder was at a liquid state. I soon succesfully removed all the mistake, allowing me to re-solder and complete the project. This challenge helped me master desoldering, which is benificial if I make a mistake in any of my future projects. My next steps are to work on my main project, which is the ball tracking robot. I next few steps are to build the base of the robot, adding motors to allowing it to move. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/COZAjiJK3ME?si=7rq4b5ZN2UaWGZ0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-My next steps are to work on my main project, which is the ball tracking robot. I next few steps are to build the base of the robots and make the robot move with motors.
+
 
 ```
 # Other Resources/Examples
