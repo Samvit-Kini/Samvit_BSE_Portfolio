@@ -43,7 +43,13 @@ HTML
 v```- What needs to be completed before your final milestone ```
 -->
 # First Milestone
+For my first milestone, I used python to move the ball tracking robot, foward and back using motors.
+First, I had to setup the Rasberry Pi 4, which allow me to output any code into other components.
+Second, I had to build the base of the ball tracking robot, which consits of one small white rotating wheel, and two large yellow motor-powered wheels.
+Third, I had to wire the L298N driving motor to the other components, so I could control the motors' direction and speed. 
+Finally, I had to use python to control the motor which got outputed by the Rasberry Pi 4, and inputed by the L298N driving motor.
 
+The Rasberry Pi 4 is a mini-computer which is powered by the USB-C source. Powering it, allows me to run code through the Rasberry Pi allowing me to control other components on the Ball Tracking Robot. The L298N is a driving motor powered by 5, 1.5 volt batteries. The driving motor gets it's power through the VS and ground pin, and outputs instructions to the motor from Output 1-4. The driving motor recieves instructions from the Rasberry Pi 4 from pins: ENA, ENB and IN 1-4. The inputs recieve code that controls direction of the motor, and the ENA and ENB pin recieve code that controll the speed of the motors. 
 <!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
 <!--```<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>```
