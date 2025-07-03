@@ -43,6 +43,7 @@ HTML
 v```- What needs to be completed before your final milestone ```
 -->
 # First Milestone
+## Summary
 For my first milestone, I used python to move the ball tracking robot, foward and back using motors. Reaching this goal took a couple of steps:
 
 1. My first step was to set up my Raspberry Pi 4. The goal of this step, was to connect to the pi remotely without connecting it to my computers with a lot of wires. This step made me follow a lot of instructions which was given to me by Blue Stamp Engineering. I was sometimes confused about which wires go where, however it was relatively easy. 
@@ -58,21 +59,21 @@ The Raspberry Pi 4 is a mini-computer which is powered by the USB-C source. Powe
 
 Another component in the L298N Driving Motor is the H-Bridge, which is a facinating system that allows the driving motor to control direction.
 
-# Figure 2:
+## Figure 2:
 ![image](https://github.com/user-attachments/assets/dde94b8d-169d-482e-b49f-104f02fe6358)
 
 Source: Last Minute Engineers
 
 As you can see in the diagram there are 4 switches, one GND and one VCC. The power comes from the VCC, and if the top right and bottom left switch are on, the power flows in a counter-clockwise direction, making the motors spin in the same  direction. However, if the top left and bottom right switch are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor control the direction of the motor.
 
-# Figure 1:
+## Figure 1:
 
 <img width="626" alt="Screenshot 2025-07-03 at 9 02 23 AM" src="https://github.com/user-attachments/assets/ead97e49-e20a-4c3e-aaf9-73279afef4f9" />
 
-# Challenges:
+## Challenges:
 Some challenges I faced were that my motor was not working because, I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply recieved, resulting the motor not working. Another challenge I faced was that some of the wires that connected the L298N's outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my ssh(a way of remotely coding onto my raspberry pi 4, without wires) discconected many time. This stood out to me, because I could not find a solution to this.
 
-# My Next Steps:
+## My Next Steps:
 My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential in my ball tracking robot. To complete milestone 2, I will have to use picamera (a camera attachible to my raspberry pi), and the open cv software. I will have to create a mask, a mask allows me to only see objects in a certain range of colors. This will be able to track my ball, because the mask will be in the same color range as my ball, which make the ball one of the only objects visiable to my picamera.
 
 <!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
