@@ -44,28 +44,30 @@ v```- What needs to be completed before your final milestone ```
 -->
 # First Milestone
 For my first milestone, I used python to move the ball tracking robot, foward and back using motors.
-First, I had to setup the Rasberry Pi 4, which allow me to output any code into other components.
+First, I had to setup the Raspberry Pi 4, which allow me to output any code into other components.
 Second, I had to build the base of the ball tracking robot, which consits of one small white rotating wheel, and two large yellow motor-powered wheels.
 Third, I had to wire the L298N driving motor to the other components, so I could control the motors' direction and speed. 
-Finally, I had to use python to control the motor which got outputed by the Rasberry Pi 4, and inputed by the L298N driving motor.
+Finally, I had to use python to control the motor which got outputed by the Raspberry Pi 4, and inputed by the L298N driving motor.
 
-The Rasberry Pi 4 is a mini-computer which is powered by the USB-C source. Powering it, allows me to run code through the Rasberry Pi allowing me to control other components on the Ball Tracking Robot. The L298N is a driving motor powered by 5, 1.5 volt batteries. The driving motor gets it's power through the VS and ground pin, and outputs instructions to the motor from Output 1-4. The driving motor recieves instructions from the Rasberry Pi 4 from pins: ENA, ENB and IN 1-4. The inputs recieve code that controls direction of the motor, and the ENA and ENB pin recieve code that controll the speed of the motors. 
-
-# Challenges:
-Some challenges I faced were that my motor was not working because, I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply recieved, resulting the motor not working. Another challenge I faced was that some of the wires that connected the L298N's outputs to the motors broke off. This required me to resolder some of the wires.
+The Raspberry Pi 4 is a mini-computer which is powered by the USB-C source. Powering it, allows me to run code through the Raspberry Pi allowing me to control other components on the Ball Tracking Robot. The L298N is a driving motor powered by 5, 1.5 volt batteries. The driving motor gets it's power through the VS and ground pin, and outputs instructions to the motor from Output 1-4. The driving motor recieves instructions from the Raspberry Pi 4 from pins: ENA, ENB and IN 1-4. The inputs recieve code that controls direction of the motor, and the ENA and ENB pin recieve code that controll the speed of the motors. 
 
 # Figure 1:
-<img width="617" alt="Screenshot 2025-07-03 at 8 50 43 AM" src="https://github.com/user-attachments/assets/a35f626b-a6d8-4c1e-a0db-fa884941799e" />
+<img width="626" alt="Screenshot 2025-07-03 at 9 02 23 AM" src="https://github.com/user-attachments/assets/ead97e49-e20a-4c3e-aaf9-73279afef4f9" />
 
-
-# The Steps I Took
-My first step was to set up my rasberry pi 4. The goal of this step, was to connect to the pi remotely without connecting it to my computers with a lot of wires. This step made me follow a lot of instructions which was given to me by Blue Stamp Engineering. I was sometimes confused about which wires go where, however it was relatively easy. 
+My first step was to set up my Raspberry Pi 4. The goal of this step, was to connect to the pi remotely without connecting it to my computers with a lot of wires. This step made me follow a lot of instructions which was given to me by Blue Stamp Engineering. I was sometimes confused about which wires go where, however it was relatively easy. 
 
 My second step was to build the base of my robot, which came in a small kit including: a plastic base, two motors, two large wheels, one small rotating wheel, and a battery source. This also came with instructions, giving me small steps to build it.
 
-My third step was to wire everything together. I had to wire the the L298N motor with the rasberry pi 4, which allowed me to program instruction that get sent by the pi. I also had to connect the L298N driving motor with the two motors in my base. This required some soldering, which I had some unexpected difficulties with.
+My third step was to wire everything together. I had to wire the the L298N motor with the Raspberry pi 4, which allowed me to program instruction that get sent by the pi. I also had to connect the L298N driving motor with the two motors in my base. This required some soldering, which I had some unexpected difficulties with.
 
 My final step was to write some simple code that tested the functionality of my motors. This code was mostly from viewing and understanding previous blue stamp engineering students, who had done the same project as me. After a few minor misteps, I succesfully made my motors run, thus finished my first milestone.
+
+# Challenges:
+Some challenges I faced were that my motor was not working because, I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply recieved, resulting the motor not working. Another challenge I faced was that some of the wires that connected the L298N's outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my ssh(a way of remotely coding onto my raspberry pi 4, without wires) discconected many time. This stood out to me, because I could not find a solution to this.
+
+# My Next Steps:
+My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential in my ball tracking robot. To complete milestone 2, I will have to use picamera (a camera attachible to my raspberry pi), and the open cv software. I will have to create a mask, a mask allows me to only see objects in a certain range of colors. This will be able to track my ball, because the mask will be in the same color range as my ball, which make the ball one of the only objects visiable to my picamera.
+
 <!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
 <!--```<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>```
