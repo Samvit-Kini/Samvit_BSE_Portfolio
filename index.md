@@ -70,6 +70,50 @@ As you can see in the diagram there are 4 switches, one GND and one VCC. The pow
 
 <img width="626" alt="Screenshot 2025-07-03 at 9 02 23 AM" src="https://github.com/user-attachments/assets/ead97e49-e20a-4c3e-aaf9-73279afef4f9" />
 
+##Code:
+#Basic Python Motor Code
+
+import  RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM) 
+
+
+# The following are the names of the rasberry-pi pins that control each of them
+MOTOR1B = 23
+MOTOR1E = 24
+MOTOR2B = 16
+MOTOR2E = 26
+ena = 25
+enb = 12
+
+GPIO.setup(MOTOR1B, GPIO.OUT)
+GPIO.setup(MOTOR1E, GPIO.OUT)
+GPIO.setup(ena, GPIO.OUT)
+GPIO.setup(MOTOR2B, GPIO.OUT)
+GPIO.setup(MOTOR2E, GPIO.OUT)
+GPIO.setup(enb, GPIO.OUT)
+
+pwmA = GPIO.PWM(ena, 100)
+pwmB = GPIO.PWM(enb, 100)
+pwmA.start(60)
+pwmB.start(60)
+#These move the wheels Backwards
+GPIO.output(MOTOR1B,GPIO.HIGH)
+GPIO.output(MOTOR1E, GPIO.LOW)
+GPIO.output(MOTOR2E, GPIO.HIGH)
+GPIO.output(MOTOR2B, GPIO.LOW)
+
+time.sleep(5)
+
+
+GPIO.output(MOTOR1B, GPIO.LOW)
+GPIO.output(MOTOR1E, GPIO.LOW)
+
+GPIO.output(MOTOR2B, GPIO.LOW)
+GPIO.output(MOTOR2E, GPIO.LOW)
+
+
 ## Challenges:
 Some challenges I faced were that my motor was not working because, I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply recieved, resulting the motor not working. Another challenge I faced was that some of the wires that connected the L298N's outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my ssh(a way of remotely coding onto my raspberry pi 4, without wires) discconected many time. This stood out to me, because I could not find a solution to this.
 
