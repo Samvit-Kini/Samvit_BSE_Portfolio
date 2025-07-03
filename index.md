@@ -54,6 +54,10 @@ The Rasberry Pi 4 is a mini-computer which is powered by the USB-C source. Power
 # Challenges:
 Some challenges I faced were that my motor was not working because, I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply recieved, resulting the motor not working. Another challenge I faced was that some of the wires that connected the L298N's outputs to the motors broke off. This required me to resolder some of the wires.
 
+# Figure 1:
+<img width="617" alt="Screenshot 2025-07-03 at 8 50 43 AM" src="https://github.com/user-attachments/assets/a35f626b-a6d8-4c1e-a0db-fa884941799e" />
+
+
 # The Steps I Took
 My first step was to set up my rasberry pi 4. The goal of this step, was to connect to the pi remotely without connecting it to my computers with a lot of wires. This step made me follow a lot of instructions which was given to me by Blue Stamp Engineering. I was sometimes confused about which wires go where, however it was relatively easy. 
 
