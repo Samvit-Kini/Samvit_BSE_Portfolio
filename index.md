@@ -1,5 +1,5 @@
 # Ball Tracking Robot
-<!--Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!-->
+The ball tracking robot, is a motor driven robot that is able to track a ball. It is able to track a red ball and is able to make it's way to the ball.
 
  
 <!--HTML You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
@@ -58,6 +58,7 @@ The Raspberry Pi 4 is a mini-computer which is powered by the USB-C source. Powe
 
 Another component in the L298N Driving Motor is the H-Bridge, which is a facinating system that allows the driving motor to control direction.
 
+# Figure 2:
 ![image](https://github.com/user-attachments/assets/dde94b8d-169d-482e-b49f-104f02fe6358)
 
 Source: Last Minute Engineers
