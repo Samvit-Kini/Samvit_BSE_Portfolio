@@ -57,9 +57,12 @@ For my first milestone, I used python to move the ball tracking robot, foward an
 The Raspberry Pi 4 is a mini-computer which is powered by the USB-C source. Powering it, allows me to run code through the Raspberry Pi allowing me to control other components on the Ball Tracking Robot. The L298N is a driving motor powered by 5, 1.5 volt batteries. The driving motor gets it's power through the VS and ground pin, and outputs instructions to the motor from Output 1-4. The driving motor recieves instructions from the Raspberry Pi 4 from pins: ENA, ENB and IN 1-4. The inputs recieve code that controls direction of the motor, and the ENA and ENB pin recieve code that controll the speed of the motors. 
 
 Another component in the L298N Driving Motor is the H-Bridge, which is a facinating system that allows the driving motor to control direction.
+
 ![image](https://github.com/user-attachments/assets/dde94b8d-169d-482e-b49f-104f02fe6358)
+
 Source: Last Minute Engineers
 
+As you can see in the diagram there are 4 switches, one GND and one VCC. The power comes from the VCC, and if the top right and bottom left switch are on, the power flows in a counter-clockwise direction, making the motors spin in the same  direction. However, if the top left and bottom right switch are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor control the direction of the motor.
 
 # Figure 1:
 
