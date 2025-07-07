@@ -40,7 +40,65 @@ For my second milestone, my objective was to create code that will allow my robo
 5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are detected by noticing the sudden change of color. For example, the computer can detect the contours around my ball that is on top of a black table, by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the certain coordinates of the ball by finding the average of the countours points. Here's a picture of the contours being shown as green points:
    <img width="1256" alt="Screenshot 2025-07-07 at 9 55 16 AM" src="https://github.com/user-attachments/assets/52e43df9-cddf-472b-a6d8-092fc1434a11" />
 
-<!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
+## Code for Second Milestone:
+```
+#import important libraries
+import picamera2 
+from time import sleep
+import os
+import cv2
+import numpy as np
+from picamera2 import Picamera2
+
+#setting up the camera
+cam = Picamera2()
+
+config = cam.create_video_configuration(main = {'format': 'BGR888'})
+cam.configure(config)
+cam.start()
+while(1):
+    # Take each frame
+    frame_old = cam.capture_array()
+    frame = cv2.cvtColor(frame_old, cv2.COLOR_RGB2BGR)
+
+    # Convert BGR to HSV
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+ 
+    # define range of red color in HSV
+    lower_red = np.array([155,80,80])
+    upper_red = np.array([179,255,255])
+ 
+    # Threshold the HSV image to get only red    colors
+    mask = cv2.inRange(hsv, lower_red, upper_red)
+ 
+    # Bitwise-AND mask and original image
+    res = cv2.bitwise_and(frame,frame, mask= mask)
+    contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.drawContours(frame, contours, -1, (0,255,0), 3)
+    if len(contours) != 0:
+        shape = max(contours, key=cv2.contourArea)
+        average_x = 0
+        average_y = 0
+        for n in shape: 
+            x= n[0][0]
+            average_x += x
+            y = n[0][1]
+            average_y += y
+        number_points = len(shape) 
+        x_cord = average_x/number_points
+        y_cord = average_y/number_points
+        print(x_cord, y_cord)
+    cv2.imshow('frame',frame)
+    cv2.imshow('mask',mask)
+    k = cv2.waitKey(5) & 0xFF
+    if k == 27:
+        break
+
+cv2.destroyAllWindows()
+```
+
+<!--
+```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
 <!--```<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>```
 
@@ -78,6 +136,50 @@ As you can see in the diagram there are 4 switches, one GND and one VCC. The pow
 
 <img width="626" alt="Screenshot 2025-07-03 at 9 02 23 AM" src="https://github.com/user-attachments/assets/ead97e49-e20a-4c3e-aaf9-73279afef4f9" />
 
+## Code For Testing Motors:
+```
+#Basic Python Motor Code
+
+import  RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM) 
+
+
+# The following are the names of the rasberry-pi pins that control each of them
+MOTOR1B = 23
+MOTOR1E = 24
+MOTOR2B = 16
+MOTOR2E = 26
+ena = 25
+enb = 12
+
+GPIO.setup(MOTOR1B, GPIO.OUT)
+GPIO.setup(MOTOR1E, GPIO.OUT)
+GPIO.setup(ena, GPIO.OUT)
+GPIO.setup(MOTOR2B, GPIO.OUT)
+GPIO.setup(MOTOR2E, GPIO.OUT)
+GPIO.setup(enb, GPIO.OUT)
+
+pwmA = GPIO.PWM(ena, 100)
+pwmB = GPIO.PWM(enb, 100)
+pwmA.start(60)
+pwmB.start(60)
+#These move the wheels Backwards
+GPIO.output(MOTOR1B,GPIO.HIGH)
+GPIO.output(MOTOR1E, GPIO.LOW)
+GPIO.output(MOTOR2E, GPIO.HIGH)
+GPIO.output(MOTOR2B, GPIO.LOW)
+
+time.sleep(5)
+
+
+GPIO.output(MOTOR1B, GPIO.LOW)
+GPIO.output(MOTOR1E, GPIO.LOW)
+
+GPIO.output(MOTOR2B, GPIO.LOW)
+GPIO.output(MOTOR2E, GPIO.LOW)
+```
 
 ## Challenges:
 Some challenges I faced were that my motor was not working because, I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply recieved, resulting the motor not working. Another challenge I faced was that some of the wires that connected the L298N's outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my ssh(a way of remotely coding onto my raspberry pi 4, without wires) discconected many time. This stood out to me, because I could not find a solution to this.
@@ -93,27 +195,112 @@ My next goal is to finish milestone 2. Completing this milestone will allow me t
 <!--```- An explanation about the different components of your project and how they will all integrate together```
 <!--```- Technical progress you've made so far```
 <!--```- Challenges you're facing and solving in your future milestones```
-<!--```- What your plan is to complete your project```-->
+<!--- What your plan is to complete your project```-->
 
 # Schematics 
 <!--```Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. ```-->
 
 # Code
-<!--``` Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. ```
-****
+## Ball Tracking Code for Mileston 2:
 ```
-c++
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
-}
+#import important libraries
+import picamera2 
+from time import sleep
+import os
+import cv2
+import numpy as np
+from picamera2 import Picamera2
 
-void loop() {
-  // put your main code here, to run repeatedly:
+#setting up the camera
+cam = Picamera2()
 
-}
-```-->
+config = cam.create_video_configuration(main = {'format': 'BGR888'})
+cam.configure(config)
+cam.start()
+while(1):
+    # Take each frame
+    frame_old = cam.capture_array()
+    frame = cv2.cvtColor(frame_old, cv2.COLOR_RGB2BGR)
+
+    # Convert BGR to HSV
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+ 
+    # define range of red color in HSV
+    lower_red = np.array([155,80,80])
+    upper_red = np.array([179,255,255])
+ 
+    # Threshold the HSV image to get only red    colors
+    mask = cv2.inRange(hsv, lower_red, upper_red)
+ 
+    # Bitwise-AND mask and original image
+    res = cv2.bitwise_and(frame,frame, mask= mask)
+    contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.drawContours(frame, contours, -1, (0,255,0), 3)
+    if len(contours) != 0:
+        shape = max(contours, key=cv2.contourArea)
+        average_x = 0
+        average_y = 0
+        for n in shape: 
+            x= n[0][0]
+            average_x += x
+            y = n[0][1]
+            average_y += y
+        number_points = len(shape) 
+        x_cord = average_x/number_points
+        y_cord = average_y/number_points
+        print(x_cord, y_cord)
+    cv2.imshow('frame',frame)
+    cv2.imshow('mask',mask)
+    k = cv2.waitKey(5) & 0xFF
+    if k == 27:
+        break
+
+cv2.destroyAllWindows()
+```
+## Motor Testing Code for Milestone 1:
+```
+#Basic Python Motor Code
+
+import  RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM) 
+
+
+# The following are the names of the rasberry-pi pins that control each of them
+MOTOR1B = 23
+MOTOR1E = 24
+MOTOR2B = 16
+MOTOR2E = 26
+ena = 25
+enb = 12
+
+GPIO.setup(MOTOR1B, GPIO.OUT)
+GPIO.setup(MOTOR1E, GPIO.OUT)
+GPIO.setup(ena, GPIO.OUT)
+GPIO.setup(MOTOR2B, GPIO.OUT)
+GPIO.setup(MOTOR2E, GPIO.OUT)
+GPIO.setup(enb, GPIO.OUT)
+
+pwmA = GPIO.PWM(ena, 100)
+pwmB = GPIO.PWM(enb, 100)
+pwmA.start(60)
+pwmB.start(60)
+#These move the wheels Backwards
+GPIO.output(MOTOR1B,GPIO.HIGH)
+GPIO.output(MOTOR1E, GPIO.LOW)
+GPIO.output(MOTOR2E, GPIO.HIGH)
+GPIO.output(MOTOR2B, GPIO.LOW)
+
+time.sleep(5)
+
+
+GPIO.output(MOTOR1B, GPIO.LOW)
+GPIO.output(MOTOR1E, GPIO.LOW)
+
+GPIO.output(MOTOR2B, GPIO.LOW)
+GPIO.output(MOTOR2E, GPIO.LOW)
+```
 # Bill of Materials
 <!--```Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.```
 ```Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. ```-->
