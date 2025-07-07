@@ -37,9 +37,12 @@ For my second milestone, my objective was to create code that will allow my robo
 2. Second, I had to set up my camera's format, configure and start the camera.
 3. Third, I had to convert the original BGR(Blue, Green, Red) to HSV(Hue, Saturation, Value) color space, because using a HSV color space will make isolating a certain color for ball tracking easier.
 4. Fourth, I had to create a mask. A mask allows me to isolate a certain color, for example red. This is usefull for me because I need to isolate red to isolate my red ball. A mask blackens out everything that is not in a certain color range. Here's a picture of the mask in action:                                                                                                                                    <img width="1223" alt="Screenshot 2025-07-07 at 9 53 15 AM" src="https://github.com/user-attachments/assets/a3513fde-9e06-47e6-95a4-ef2e3dcf9b55" />
+## Figure 4:
+
 5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are detected by noticing the sudden change of color. For example, the computer can detect the contours around my ball that is on top of a black table, by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the certain coordinates of the ball by finding the average of the countours points. Here's a picture of the contours being shown as green points:
    <img width="1256" alt="Screenshot 2025-07-07 at 9 55 16 AM" src="https://github.com/user-attachments/assets/52e43df9-cddf-472b-a6d8-092fc1434a11" />
-
+## Figure 3:
+## Milestone 2 Video:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h3WfutsooX8?si=DJW7ErF61s7oUL5d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Next Steps:
@@ -133,16 +136,14 @@ The Raspberry Pi 4 is a mini-computer which is powered by the USB-C source. Powe
 
 Another component in the L298N Driving Motor is the H-Bridge, which is a facinating system that allows the driving motor to control direction.
 
-## Figure 2:
 ![image](https://github.com/user-attachments/assets/94073058-3b01-4050-9b74-7c99c4e26aab)
-
+## Figure 2:
 Source: Last Minute Engineers
 
 As you can see in the diagram there are 4 switches, one GND and one VCC. The power comes from the VCC, and if the top right and bottom left switch are on, the power flows in a counter-clockwise direction, making the motors spin in the same  direction. However, if the top left and bottom right switch are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor control the direction of the motor.
 
-## Figure 1:
-
 <img width="942" alt="Screenshot 2025-07-07 at 11 58 07 AM" src="https://github.com/user-attachments/assets/7599743f-4bbe-407f-a6cb-58e955000324" />
+## Figure 1:
 
 ## Code For Testing Motors:
 ```
