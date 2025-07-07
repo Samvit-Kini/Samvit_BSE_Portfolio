@@ -31,7 +31,8 @@ HTML
 
 
 # Second Milestone
-##Summary
+##
+Summary
 For my second milestone, my objective was to create code that will allow my robot to track my red ball. This required many steps and a little code using libraries such as OpenCv. Unlike the first milestone that required barely any code, the second milestone was focused on coding. Here's how my code works: 
 1. Import important libraries such as picamera2, for easy access to my camera, which is the picamera.
 2. Second, I had to set up my camera's format, configure and start the camera.
