@@ -31,6 +31,15 @@ HTML
 
 
 # Second Milestone
+##Summary
+For my second milestone, my objective was to create code that will allow my robot to track my red ball. This required many steps and a little code using libraries such as OpenCv. Unlike the first milestone that required barely any code, the second milestone was focused on coding. Here's how my code works: 
+1. Import important libraries such as picamera2, for easy access to my camera, which is the picamera.
+2. Second, I had to set up my camera's format, configure and start the camera.
+3. Third, I had to convert the original BGR(Blue, Green, Red) to HSV(Hue, Saturation, Value) color space, because using a HSV color space will make isolating a certain color for ball tracking easier.
+4. Fourth, I had to create a mask. A mask allows me to isolate a certain color, for example red. This is usefull for me because I need to isolate red to isolate my red ball. A mask blackens out everything that is not in a certain color range. Here's a picture of the mask in action:
+<img width="1223" alt="Screenshot 2025-07-07 at 9 53 15 AM" src="https://github.com/user-attachments/assets/a3513fde-9e06-47e6-95a4-ef2e3dcf9b55" />
+5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are detected by noticing the sudden change of color. For example, the computer can detect the contours around my ball that is on top of a black table, by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the certain coordinates of the ball by finding the average of the countours points. Here's a picture of the contours being shown as green points:
+   <img width="1256" alt="Screenshot 2025-07-07 at 9 55 16 AM" src="https://github.com/user-attachments/assets/52e43df9-cddf-472b-a6d8-092fc1434a11" />
 
 <!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
