@@ -46,7 +46,7 @@ For my second milestone, my objective was to create code that will allow my robo
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h3WfutsooX8?si=DJW7ErF61s7oUL5d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Next Steps:
-For my next steps, I will need to work on my third milestone, which allows the ball-tracking robot to move towards the ball while avoiding any obstacles in its way. This will be my last milestone unless I add any modifications.
+For my next steps, I will need to work on my third milestone, which allows the ball-tracking robot to move towards the ball while avoiding any obstacles in its way. This will be my last milestone unless I add any modifications. I will achieve this goal by using the coordinates I got from the second milestone to tell if the ball is to the right or left of the robot.
 
 ## Challenges:
 A major challenge I faced was getting the code to work. I had to change the code a lot because sometimes the color space wasn't getting changed, and sometimes the color range was not quite right. However, I was able to create code that works as shown below.
