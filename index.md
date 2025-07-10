@@ -29,6 +29,124 @@ HTML
 For my final milestone, my ball tracking robot can now track and follow the robot. I also properly glued my picam to my robot. For this milestone, I had to write code using Python on Visual Code that will be able to follow the ball. Here's how my code works: 
 <img width="872" height="492" alt="Screenshot 2025-07-10 at 11 58 31 AM" src="https://github.com/user-attachments/assets/324eb8c7-726c-4ed5-a1c0-e0e195f75dd8" />
 ### Figure 4
+Here's the actual code:
+``` import picamera2 
+from time import sleep
+import os
+import cv2
+import numpy as np
+from picamera2 import Picamera2
+import  RPi.GPIO as GPIO
+import time
+from gpiozero import DistanceSensor, Motor
+GPIO.setmode(GPIO.BOARD)
+ultrasonic_left = DistanceSensor(echo=17, trigger=4)
+
+ultrasonic_front = DistanceSensor(echo=9, trigger=10)
+
+ultrasonic_right = DistanceSensor(echo=22, trigger=27)
+#from gpiozero import DistanceSensor
+# The following are the names of the rasberry-pi pins that control each of them
+motor_left = Motor(forward=23,backward=24)
+motor_right = Motor(forward=26,backward=16)
+
+ultrasonic_front.max_distance = 10000000
+ultrasonic_front.threshold_distance = 20
+ultrasonic_left.max_distance = 10000000
+ultrasonic_left.threshold_distance = 20
+ultrasonic_right.max_distance = 10000000
+ultrasonic_right.threshold_distance = 20  
+
+
+def move_forward():
+    motor_left.forward(0.5)
+    motor_right.forward(0.5)
+def stop_move():
+    motor_left.stop()
+    motor_right.stop()
+def move_left():
+    motor_left.backward(0.4)
+    motor_right.forward(0.4)
+def move_right():
+    motor_left.forward(0.4)
+    motor_right.backward(0.4)
+def move_backward():
+    motor_left.backward(0.75)
+    motor_right.backward(0.75)
+
+
+def find_ball():
+    # Take each frame
+    frame_old = cam.capture_array()
+    frame = cv2.cvtColor(frame_old, cv2.COLOR_RGB2BGR)
+
+    # Convert BGR to HSV
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+ 
+    # define range of red color in HSV
+    lower_red = np.array([155,80,80])
+    upper_red = np.array([179,255,255])
+ 
+    # Threshold the HSV image to get only red    colors
+    mask = cv2.inRange(hsv, lower_red, upper_red)
+ 
+    # Bitwise-AND mask and original image
+    res = cv2.bitwise_and(frame,frame, mask= mask)
+
+    #The Following Code finds the contours, or the points that surround the ball,
+    #and finding the average of those, to find the center of the ball
+    contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.drawContours(frame, contours, -1, (0,255,0), 3)
+    if len(contours) != 0:
+        shape = max(contours, key=cv2.contourArea)
+        area = cv2.contourArea(shape)
+        average_x = 0
+        average_y = 0
+        for n in shape: 
+            x= n[0][0]
+            average_x += x
+            y = n[0][1]
+            average_y += y
+        number_points = len(shape) 
+        x_cord = average_x/number_points
+        y_cord = average_y/number_points
+        #The Following Code shows what the picam is seeing
+        cv2.imshow('frame',frame)
+        cv2.imshow('mask',mask)
+        return (x_cord, area)
+    else:
+        return (0, 0)
+#setting up the camera
+cam = Picamera2()
+
+config = cam.create_video_configuration(main = {'format': 'BGR888'})
+cam.configure(config)
+cam.start()
+while(1):
+    
+
+        #The follow code allows the robot to move towards the ball
+    def move():
+        x_cord, area = find_ball()
+        print(x_cord ,area)
+        if area < 250000 and area > 0:
+            if x_cord > 900 or x_cord < 400:
+                print(x_cord)
+                if x_cord > 840:
+                    move_left()
+                else:
+                    move_right()
+            else:
+                move_forward()
+        else:
+            stop_move()
+
+
+      
+    move()
+
+cv2.destroyAllWindows()
+```
 
 # Second Milestone
 ## Summary
