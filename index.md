@@ -27,16 +27,8 @@ HTML
 <!--```- What you hope to learn in the future after everything you've learned at BSE ```-->
 ## Summary
 For my final milestone, my ball tracking robot can now track and follow the robot. I also properly glued my picam to my robot. For this milestone, I had to write code using Python on Visual Code that will be able to follow the ball. Here's how my code works: 
-<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAGsylDi7xI/d-x-BJPoYT1kUNQ-qo0M7w/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGsylDi7xI&#x2F;d-x-BJPoYT1kUNQ-qo0M7w&#x2F;view?utm_content=DAGsylDi7xI&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">First I take the coordinate of the ball. (From Milestone 2)</a> by Samvitgamez
-
-
+<img width="872" height="492" alt="Screenshot 2025-07-10 at 11 58 31 AM" src="https://github.com/user-attachments/assets/324eb8c7-726c-4ed5-a1c0-e0e195f75dd8" />
+### Figure 4
 
 # Second Milestone
 ## Summary
