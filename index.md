@@ -147,6 +147,16 @@ while(1):
 
 cv2.destroyAllWindows()
 ```
+## Chalenges
+A challenge I faced was that my robot kept on turning left and right, which sometimes led to the ball tracking robot to hit the ball off the table. I fixed this problem, by making the code first turn left/right. Once it's in position, then it will turn forward. However, other then that, there was not any major setbacks unlike my other milestones, and was quick unlike the other two. This was because most of the code was from the other milestones, and the only code I wrote was for the ball following system. 
+
+## What I learned through the milestones:
+I learned a lot from BSE, including the basics of circuts, to setting up masks and contours for ball tracking. Here's a list of the few things I learned from BSE:
+1. I learned the basics of circuting such as the power source and ground. I learned the different type of wires, and learned how to solder them to the circut board. I also learned Ohm's Law: which states that Current is equal to Volatage over Resistance.
+2. I learned about how to control DC motors with the L298N motor driver, and how to control pins using the Rasperry Pi 4.
+3. I learned how to use the Picam, and softwares like OpenCv to complete tasks like ball detection.
+4. I also learned about ultrasonic sensors which I use in modification 1. I learned how to connect the ultrasonic sensor to breadboards which is used to organize circuts.
+5. At Bluestamp, I learned how to find code, how to connect them to physical components, and how to make a lot of components work together to acomplish a task.
 
 # Second Milestone
 ## Summary
