@@ -29,6 +29,7 @@ HTML
 For my final milestone, my ball tracking robot can now track and follow the robot. I also properly glued my picam to my robot. For this milestone, I had to write code using Python on Visual Code that will be able to follow the ball. Here's how my code works: 
 
 <img width="872" height="492" alt="Screenshot 2025-07-10 at 11 58 31 AM" src="https://github.com/user-attachments/assets/324eb8c7-726c-4ed5-a1c0-e0e195f75dd8" />
+
 ### Figure 4
 Here's the actual code:
 ``` import picamera2 
