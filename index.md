@@ -13,7 +13,8 @@ HTML
 | Samvit K | Lynbrook | Electrical Engineering | Incoming Freshman
 
 <img width="1122" alt="Screenshot 2025-07-09 at 11 50 30 AM" src="https://github.com/user-attachments/assets/3381aefa-85cb-446c-815d-9f72af6c3ad0" />
-
+# Modification 1
+This modification allows my ball tracking robot to avoid any obstacles in it's path to the ball. This modification used ultrasonic sensors, to detect the distance of the the closest object from the robot. Here's how my ultrasonic sensors work, ................
 # Final Milestone
 
 <!--Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```-->
