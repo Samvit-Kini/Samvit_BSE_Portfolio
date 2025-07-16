@@ -78,18 +78,16 @@ v```- What needs to be completed before your final milestone ```
 -->
 # First Milestone
 ## Summary
-For my first milestone, I used python to move the ball tracking robot, foward and back using motors. Reaching this goal took a couple of steps:
+For my first milestone, I used Python to move the Ball Tracking Robot forward and back using motors. Reaching this goal took a couple of steps:
 
-1. My first step was to set up my Raspberry Pi 4. The goal of this step, was to connect to the pi remotely without connecting it to my computers with a lot of wires. This step made me follow a lot of instructions which was given to me by Blue Stamp Engineering. I was sometimes confused about which wires go where, however it was relatively easy. 
-
+1. My first step was to set up my Raspberry Pi 4. The goal of this step was to connect to the Pi remotely without connecting it to my computers with a lot of wires. This step made me follow a lot of instructions which was given to me by Blue Stamp Engineering. I was sometimes confused about which wires go where; however, it was relatively easy.
 2. My second step was to build the base of my robot, which came in a small kit including: a plastic base, two motors, two large wheels, one small rotating wheel, and a battery source. This also came with instructions, giving me small steps to build it.
+3. My third step was to wire everything together. I had to wire the L298N motor with the Raspberry Pi 4, which allowed me to program instructions that get sent by the Pi. I also had to connect the L298N driving motor to the two motors in my base. This required some soldering, which I had some unexpected difficulties with.
+4. My final step was to write some simple code that tested the functionality of my motors. This code was mostly from viewing and understanding previous blue stamp engineering students, who had done the same project as I. After a few minor mistakes, I successfully made my motors run, thus finishing my first milestone.
 
-3. My third step was to wire everything together. I had to wire the the L298N motor with the Raspberry pi 4, which allowed me to program instruction that get sent by the pi. I also had to connect the L298N driving motor with the two motors in my base. This required some soldering, which I had some unexpected difficulties with.
+The Raspberry Pi 4 is a mini-computer that is powered by a USB-C source. Powering it allows me to run code through the Raspberry Pi, allowing me to control other components on the Ball Tracking Robot. The L298N is a driving motor powered by 5 1.5-volt batteries. The driving motor gets its power through the VS and ground pin, and outputs instructions to the motor from Output 1-4. The driving motor receives instructions from the Raspberry Pi 4 from pins: ENA, ENB and IN 1-4. The inputs receive code that controls the direction of the motor, and the ENA and ENB pins receive code that controls the speed of the motors.
 
-4. My final step was to write some simple code that tested the functionality of my motors. This code was mostly from viewing and understanding previous blue stamp engineering students, who had done the same project as me. After a few minor misteps, I succesfully made my motors run, thus finished my first milestone.
-
-
-The Raspberry Pi 4 is a mini-computer which is powered by the USB-C source. Powering it, allows me to run code through the Raspberry Pi allowing me to control other components on the Ball Tracking Robot. The L298N is a driving motor powered by 5, 1.5 volt batteries. The driving motor gets it's power through the VS and ground pin, and outputs instructions to the motor from Output 1-4. The driving motor recieves instructions from the Raspberry Pi 4 from pins: ENA, ENB and IN 1-4. The inputs recieve code that controls direction of the motor, and the ENA and ENB pin recieve code that controll the speed of the motors. 
+Another component in the L298N Driving Motor is the H-Bridge, which is a fascinating system that allows the driving motor to control direction.
 
 Another component in the L298N Driving Motor is the H-Bridge, which is a facinating system that allows the driving motor to control direction.
 
