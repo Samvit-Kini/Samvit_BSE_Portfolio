@@ -148,7 +148,9 @@ My next goal is to finish milestone 2. Completing this milestone will allow me t
 
 # Code
 ## Final Code (For Modification 1)
-```import picamera2
+```
+# Importing Necessary Softwares
+import picamera2
 from time import sleep
 import os
 import cv2
@@ -158,19 +160,18 @@ import  RPi.GPIO as GPIO
 import time
 from gpiozero import DistanceSensor, Motor
 GPIO.setmode(GPIO.BOARD)
+
+# Giving Names to each of the Ultrasonic Sensors
 ultrasonic_left = DistanceSensor(echo=17, trigger=4)
-
-
 ultrasonic_front = DistanceSensor(echo=9, trigger=10)
-
-
 ultrasonic_right = DistanceSensor(echo=22, trigger=27)
-#from gpiozero import DistanceSensor
-# The following are the names of the rasberry-pi pins that control each of them
+
+# Giving Names to the motors, and the numbers are the pins on the raspberry pi
+# that the motors are connected to
 motor_left = Motor(forward=23,backward=24)
 motor_right = Motor(forward=26,backward=16)
 
-
+# Allowing the Ultrasonic Sensors to get more distance
 ultrasonic_front.max_distance = 10000000
 ultrasonic_front.threshold_distance = 20
 ultrasonic_left.max_distance = 10000000
@@ -179,7 +180,7 @@ ultrasonic_right.max_distance = 10000000
 ultrasonic_right.threshold_distance = 20 
 last_x = 0
 
-
+# Writing functions for moving the robot, so I do not need to rewrite everything
 def move_backward():
    motor_left.forward(0.5)
    motor_right.forward(0.5)
@@ -196,9 +197,7 @@ def move_forward():
    motor_left.backward(0.5)
    motor_right.backward(0.5)
 
-
-
-
+# Function that takes a picture, and find the coordinates of the ball
 def find_ball():
    global last_x
    # Take each frame
@@ -244,15 +243,12 @@ def find_ball():
        return (x_cord, area)
    else:
        return (last_x, 0)
+   
 #setting up the camera
 cam = Picamera2()
-
-
 config = cam.create_video_configuration(main = {'format': 'BGR888'})
 cam.configure(config)
 cam.start()
-
-
 
 
 # Code for obstacle avoidance modification 1
@@ -281,7 +277,7 @@ def obstacle_avoidance():
     else:
         stop_move()
 
-
+# Function for moving
 def move():
        x_cord, area = find_ball()
        print(area)
@@ -307,6 +303,9 @@ while(1):
    #The follow code allows the robot to move towards the ball
     obstacle_avoidance()
 cv2.destroyAllWindows()
+
+
+
  ```
 
 ## Ball Tracking Code for Milestone 3:
