@@ -15,7 +15,19 @@ HTML
 <img width="610" height="531" alt="Screenshot 2025-07-17 at 9 35 22 AM" src="https://github.com/user-attachments/assets/0bdc167e-f54b-46a2-bde1-596707539152" />
 
 # Modification 1 
-This modification allows my ball tracking robot to avoid any obstacles in it's path to the ball. This modification used ultrasonic sensors, to detect the distance of the the closest object from the robot. Here's how my ultrasonic sensors work, ................
+## Summary
+This modification allows my ball tracking robot to avoid any obstacles in it's path to the ball. This modification used ultrasonic sensors, to detect the distance of the the closest object from the robot. Here's how my ultrasonic sensors work, they send out pulses of sound that we cannot hear, and detects the distance of the nearest object by using the time it takes for the echo to come back and divides it by the speed of sound. I use three of these ultrasonic sensors to find out if there are any objects other then the ball in the robot's path. If there is an object, I avoid the object by using code to move around the obstacle. 
+
+Here is a scematic of how I connected the ultrasonic sensors to my Raspberry Pi 4:
+<img width="896" height="604" alt="Screenshot 2025-07-17 at 9 55 20 AM" src="https://github.com/user-attachments/assets/df3ac50a-33f1-4ca8-93df-26f84acc1942" />
+### Figure 5
+## Challenges
+In this modification, I faced many unexpected challenges. Out of them, there were two challenges that stood out to me:
+1. The first challenge was that the Ball TRacking Robot kept moving to far in one certain direction. To fix this problem, I had to juggle around with my code, and had to make sure my robot stopped moving, after it fullfilled a certain goal. This challenge took me the longest amount of time, but I fixed the code.
+2. The second challenge that stood out to me, was a bit of a setback. The setback was that my Raspberry Pi board stopped working. The reason is unknown, but I had to restart setting up the board. This required me to rewire many things, and forced me to repeat the downloading procces. The downloading took a long time, forcing me to waste a day at Bluestamp, resetting up my Pi.
+
+
+
 # Final Milestone
 
 <!--Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```-->
@@ -102,7 +114,7 @@ Source: Last Minute Engineers
 As you can see in the diagram there are 4 switches, one GND and one VCC. The power comes from the VCC, and if the top right and bottom left switch are on, the power flows in a counter-clockwise direction, making the motors spin in the same  direction. However, if the top left and bottom right switch are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor control the direction of the motor.
 
 <img width="942" alt="Screenshot 2025-07-07 at 11 58 07 AM" src="https://github.com/user-attachments/assets/7599743f-4bbe-407f-a6cb-58e955000324" />
-###Figure 1:
+### Figure 1:
 
 ## Code For Testing Motors:
 ```
