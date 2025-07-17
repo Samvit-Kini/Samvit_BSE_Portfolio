@@ -58,7 +58,7 @@ I learned a lot from BSE, including the basics of circuts, to setting up masks a
 5. At Bluestamp, I learned how to find code, how to connect them to physical components, and how to make a lot of components work together to acomplish a task.
 
 ## Next Steps
-My next steps would be to add a modification to my ball_tracking robot. This modification would be obstacle avoiding code. I will plan to use ultrasonic sensors to achieve this goal, by finding out the distance between any obstacle from the robot. One challenge I may face would be confusing the ball as an obstacle. After BlueStamp Engineering I plan to join the robotics team, and hope to learn more, and gain more experience for all kinds of apsects of engineering.
+My next steps would be to add a modification to my Ball Tracking Robot. This modification would be obstacle avoiding code. I will plan to use ultrasonic sensors to achieve this goal, by finding out the distance between any obstacle from the robot. One challenge I may face would be confusing the ball as an obstacle. After BlueStamp Engineering I plan to join the robotics team, and hope to learn more, and gain more experience for all kinds of apsects of engineering.
 
 # Second Milestone
 ## Summary
@@ -126,7 +126,7 @@ import time
 GPIO.setmode(GPIO.BCM) 
 
 
-# The following are the names of the rasberry-pi pins that control each of them
+# The following are the names of the raspberry-pi pins that control each of them
 MOTOR1B = 23
 MOTOR1E = 24
 MOTOR2B = 16
@@ -165,7 +165,7 @@ GPIO.output(MOTOR2E, GPIO.LOW)
 Some challenges I faced were that my motor was not working because, I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply recieved, resulting the motor not working. Another challenge I faced was that some of the wires that connected the L298N's outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my ssh(a way of remotely coding onto my raspberry pi 4, without wires) discconected many time. This stood out to me, because I could not find a solution to this.
 
 ## My Next Steps:
-My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential in my ball tracking robot. To complete milestone 2, I will have to use picamera (a camera attachible to my raspberry pi), and the open cv software. I will have to create a mask, a mask allows me to only see objects in a certain range of colors. This will be able to track my ball, because the mask will be in the same color range as my ball, which make the ball one of the only objects visiable to my picamera.
+My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential in my Ball Tracking Robot. To complete milestone 2, I will have to use picamera (a camera attachible to my raspberry pi), and the open cv software. I will have to create a mask, a mask allows me to only see objects in a certain range of colors. This will be able to track my ball, because the mask will be in the same color range as my ball, which make the ball one of the only objects visiable to my picamera.
 
 <!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
@@ -200,7 +200,7 @@ ultrasonic_front = DistanceSensor(echo=9, trigger=10)
 
 ultrasonic_right = DistanceSensor(echo=22, trigger=27)
 #from gpiozero import DistanceSensor
-# The following are the names of the rasberry-pi pins that control each of them
+# The following are the names of the raspberry-pi pins that control each of them
 motor_left = Motor(forward=23,backward=24)
 motor_right = Motor(forward=26,backward=16)
 
@@ -367,7 +367,7 @@ import time
 GPIO.setmode(GPIO.BCM) 
 
 
-# The following are the names of the rasberry-pi pins that control each of them
+# The following are the names of the raspberry-pi pins that control each of them
 MOTOR1B = 23
 MOTOR1E = 24
 MOTOR2B = 16
@@ -417,7 +417,7 @@ The starter project I chose was the RGB sliders. I chose this because building t
 <iframe width="560" height="315" src="https://www.youtube.com/embed/COZAjiJK3ME?si=7rq4b5ZN2UaWGZ0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # Challenges:
-A chalenge I faced was that sometimes the solder sometimes spilled into another spot, creating a connection between two pins, which is a problem. To deal with this problem, I had to remove the solder. Which led me to use the desoldering tool, which sucked the solder out when the solder was at a liquid state. I soon succesfully removed all the mistake, allowing me to re-solder and complete the project. This challenge helped me master desoldering, which is benificial if I make a mistake in any of my future projects. My next steps are to work on my main project, which is the ball tracking robot. I next few steps are to build the base of the robot, adding motors to allowing it to move. 
+A chalenge I faced was that sometimes the solder sometimes spilled into another spot, creating a connection between two pins, which is a problem. To deal with this problem, I had to remove the solder. Which led me to use the desoldering tool, which sucked the solder out when the solder was at a liquid state. I soon succesfully removed all the mistake, allowing me to re-solder and complete the project. This challenge helped me master desoldering, which is benificial if I make a mistake in any of my future projects. My next steps are to work on my main project, which is the Ball Tracking Robot. I next few steps are to build the base of the robot, adding motors to allowing it to move. 
 
 
 
