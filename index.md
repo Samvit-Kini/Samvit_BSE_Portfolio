@@ -12,7 +12,8 @@ HTML
 |:--:|:--:|:--:|:--:|
 | Samvit K | Lynbrook | Electrical Engineering | Incoming Freshman
 
-<img width="1122" alt="Screenshot 2025-07-09 at 11 50 30 AM" src="https://github.com/user-attachments/assets/3381aefa-85cb-446c-815d-9f72af6c3ad0" />
+<img width="610" height="531" alt="Screenshot 2025-07-17 at 9 35 22 AM" src="https://github.com/user-attachments/assets/0bdc167e-f54b-46a2-bde1-596707539152" />
+
 # Modification 1 
 This modification allows my ball tracking robot to avoid any obstacles in it's path to the ball. This modification used ultrasonic sensors, to detect the distance of the the closest object from the robot. Here's how my ultrasonic sensors work, ................
 # Final Milestone
@@ -27,7 +28,7 @@ This modification allows my ball tracking robot to avoid any obstacles in it's p
 <!--```- A summary of key topics you learned about```-->
 <!--```- What you hope to learn in the future after everything you've learned at BSE ```-->
 ## Summary
-For my final milestone, my ball tracking robot can now track and follow the robot. I also properly glued my picam to my robot. For this milestone, I had to write code using Python on Visual Code that will be able to follow the ball. Here's how my code works: 
+For my final milestone, my ball tracking robot can now track and follow the robot. For this milestone, I had to write code using Python on Visual Code that will be able to follow the ball. This code tracks whether the ball is to the left or right of the robot, and then follows it. Here's how my code works: 
 
 <img width="872" height="492" alt="Screenshot 2025-07-10 at 11 58 31 AM" src="https://github.com/user-attachments/assets/324eb8c7-726c-4ed5-a1c0-e0e195f75dd8" />
 
@@ -43,6 +44,9 @@ I learned a lot from BSE, including the basics of circuts, to setting up masks a
 3. I learned how to use the Picam, and softwares like OpenCv to complete tasks like ball detection.
 4. I also learned about ultrasonic sensors which I use in modification 1. I learned how to connect the ultrasonic sensor to breadboards which is used to organize circuts.
 5. At Bluestamp, I learned how to find code, how to connect them to physical components, and how to make a lot of components work together to acomplish a task.
+
+## Next Steps
+My next steps would be to add a modification to my ball_tracking robot. This modification would be obstacle avoiding code. I will plan to use ultrasonic sensors to achieve this goal, by finding out the distance between any obstacle from the robot. One challenge I may face would be confusing the ball as an obstacle. After BlueStamp Engineering I plan to join the robotics team, and hope to learn more, and gain more experience for all kinds of apsects of engineering.
 
 # Second Milestone
 ## Summary
