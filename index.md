@@ -19,7 +19,10 @@ HTML
 This modification allows my ball tracking robot to avoid any obstacles in it's path to the ball. This modification used ultrasonic sensors, to detect the distance of the the closest object from the robot. Here's how my ultrasonic sensors work, they send out pulses of sound that we cannot hear, and detects the distance of the nearest object by using the time it takes for the echo to come back and divides it by the speed of sound. I use three of these ultrasonic sensors to find out if there are any objects other then the ball in the robot's path. If there is an object, I avoid the object by using code to move around the obstacle. 
 
 Here is a scematic of how I connected the ultrasonic sensors to my Raspberry Pi 4:
-<img width="896" height="604" alt="Screenshot 2025-07-17 at 9 55 20 AM" src="https://github.com/user-attachments/assets/df3ac50a-33f1-4ca8-93df-26f84acc1942" />
+
+<img width="953" height="590" alt="Screenshot 2025-07-17 at 10 18 14 AM" src="https://github.com/user-attachments/assets/4c5ac531-2600-4d7a-8bd2-d690b7974bc2" />
+
+
 ### Figure 5
 ## Challenges
 In this modification, I faced many unexpected challenges. Out of them, there were two challenges that stood out to me:
@@ -107,7 +110,9 @@ Another component in the L298N Driving Motor is the H-Bridge, which is a fascina
 
 Another component in the L298N Driving Motor is the H-Bridge, which is a facinating system that allows the driving motor to control direction.
 
-![image](https://github.com/user-attachments/assets/94073058-3b01-4050-9b74-7c99c4e26aab)
+<img width="652" height="352" alt="Screenshot 2025-07-17 at 10 20 10 AM" src="https://github.com/user-attachments/assets/62b3cb7c-24a1-4029-be90-299fa89fb447" />
+
+
 ### Figure 2:
 
 As you can see in the diagram there are 4 switches, one GND and one VCC. The power comes from the VCC, and if the top right and bottom left switch are on, the power flows in a counter-clockwise direction, making the motors spin in the same  direction. However, if the top left and bottom right switch are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor control the direction of the motor.
