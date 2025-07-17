@@ -22,8 +22,10 @@ Here is a scematic of how I connected the ultrasonic sensors to my Raspberry Pi 
 
 <img width="953" height="590" alt="Screenshot 2025-07-17 at 10 18 14 AM" src="https://github.com/user-attachments/assets/4c5ac531-2600-4d7a-8bd2-d690b7974bc2" />
 
-
 ### Figure 5
+
+In addition to the ultrasonic sensors, I added the bread board which allows me to organize my wiring and allow me to easily connect the ultrasonic sensors to the Raspberry Pi.
+
 ## Challenges
 In this modification, I faced many unexpected challenges. Out of them, there were two challenges that stood out to me:
 1. The first challenge was that the Ball TRacking Robot kept moving to far in one certain direction. To fix this problem, I had to juggle around with my code, and had to make sure my robot stopped moving, after it fullfilled a certain goal. This challenge took me the longest amount of time, but I fixed the code.
@@ -182,7 +184,11 @@ My next goal is to finish milestone 2. Completing this milestone will allow me t
 <!--- What your plan is to complete your project```-->
 
 # Schematics 
-<!--```Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. ```-->
+## Scematic for Ultrasonic Sensors:
+<img width="953" height="590" alt="Screenshot 2025-07-17 at 10 18 14 AM" src="https://github.com/user-attachments/assets/4c5ac531-2600-4d7a-8bd2-d690b7974bc2" />
+
+## Scematic for L298N Driving Motor:
+<img width="942" alt="Screenshot 2025-07-07 at 11 58 07 AM" src="https://github.com/user-attachments/assets/7599743f-4bbe-407f-a6cb-58e955000324" />
 
 # Code
 ## Ball Tracking Code for Milestone 3:
@@ -420,7 +426,7 @@ The starter project I chose was the RGB sliders. I chose this because building t
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/COZAjiJK3ME?si=7rq4b5ZN2UaWGZ0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-# Challenges:
+## Challenges:
 A chalenge I faced was that sometimes the solder sometimes spilled into another spot, creating a connection between two pins, which is a problem. To deal with this problem, I had to remove the solder. Which led me to use the desoldering tool, which sucked the solder out when the solder was at a liquid state. I soon succesfully removed all the mistake, allowing me to re-solder and complete the project. This challenge helped me master desoldering, which is benificial if I make a mistake in any of my future projects. My next steps are to work on my main project, which is the Ball Tracking Robot. I next few steps are to build the base of the robot, adding motors to allowing it to move. 
 
 
