@@ -109,7 +109,6 @@ Another component in the L298N Driving Motor is the H-Bridge, which is a facinat
 
 ![image](https://github.com/user-attachments/assets/94073058-3b01-4050-9b74-7c99c4e26aab)
 ### Figure 2:
-Source: Last Minute Engineers
 
 As you can see in the diagram there are 4 switches, one GND and one VCC. The power comes from the VCC, and if the top right and bottom left switch are on, the power flows in a counter-clockwise direction, making the motors spin in the same  direction. However, if the top left and bottom right switch are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor control the direction of the motor.
 
