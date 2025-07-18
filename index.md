@@ -84,6 +84,7 @@ For my second milestone, my objective was to create code that would allow my rob
 4. Fourth, I had to create a mask. A mask allows me to isolate a certain color, for example, red. This is useful for me because I need to isolate red to track my red ball. A mask blackens out everything that is not within a certain color range. Here's a picture of the mask in action:
 
 <img width="1223" alt="Screenshot 2025-07-07 at 9 53 15 AM" src="https://github.com/user-attachments/assets/a3513fde-9e06-47e6-95a4-ef2e3dcf9b55" />
+
 ### Figure 4 Picture of the Picam Using A Mask
 
 5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are identified by noticing the sudden change in color. For example, the computer can detect the contours around my ball that is on top of a black table by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the specific coordinates of the ball by averaging the contour points. Here's a picture of the contours shown as green points:
