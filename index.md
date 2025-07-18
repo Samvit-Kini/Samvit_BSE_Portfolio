@@ -17,19 +17,19 @@ HTML
 ## Summary
 This modification allows my ball tracking robot to avoid any obstacles in its path to the ball. This modification uses ultrasonic sensors to detect the distance of the closest object from the robot. Here's how my ultrasonic sensors work: they send out pulses of sound that we cannot hear, and detect the distance of the nearest object by using the time it takes for the echo to come back and dividing it by the speed of sound. I use three of these ultrasonic sensors to find out if there are any objects other than the ball in the robot's path. If there is an object, I avoid it by using code to move around the obstacle.
 
-Here is a scematic of how I connected the ultrasonic sensors to my Raspberry Pi 4:
+Here is a schematic of how I connected the ultrasonic sensors to my Raspberry Pi 4:
 
 <img width="894" height="616" alt="Screenshot 2025-07-18 at 11 22 59 AM" src="https://github.com/user-attachments/assets/4381cf98-d991-4656-9658-5605374ffee5" />
 
-### Figure 6
+### Figure 6 Ultrasonic Sensors Schematic
 
 In addition to the ultrasonic sensors, I added a breadboard, which allows me to organize my wiring and easily connect the ultrasonic sensors to the Raspberry Pi. I also added a case for my ball-tracking robot, so it looks cleaner. The case is shown covering the components in the final picture.
 
-Here is the scematic of the case I built:
+Here is the schematic of the case I built:
 
-<img width="685" height="421" alt="Screenshot 2025-07-18 at 11 03 52 AM" src="https://github.com/user-attachments/assets/459c786f-38c5-4e2b-8e4a-1a50b26f7ed1" />
+<img width="872" height="565" alt="Screenshot 2025-07-18 at 12 02 47 PM" src="https://github.com/user-attachments/assets/7cad591b-2d67-45ce-960c-2e50e94f8c45" />
 
-### Figure 5
+### Figure 5 Drawing of Case
 
 ## Challenges
 In this modification, I faced many unexpected challenges. Out of them, there were two challenges that stood out to me:
@@ -59,7 +59,7 @@ For my final milestone, my ball-tracking robot can now track and follow the ball
 
 <img width="872" height="492" alt="Screenshot 2025-07-10 at 11 58 31 AM" src="https://github.com/user-attachments/assets/324eb8c7-726c-4ed5-a1c0-e0e195f75dd8" />
 
-### Figure 4
+### Figure 4 Diagram of How the Code Works
 
 ## Chalenges
 A challenge I faced was that my robot kept turning left and right, which sometimes led to the ball-tracking robot hitting the ball off the table. I fixed this problem by making the code first turn left/right. Once it was in position, then it would turn forward. However, other than that, there were not any major setbacks unlike my other milestones, and it was quick compared to the other two. This was because most of the code was from the other milestones, and the only code I wrote was for the ball-following system.
@@ -84,13 +84,13 @@ For my second milestone, my objective was to create code that would allow my rob
 4. Fourth, I had to create a mask. A mask allows me to isolate a certain color, for example, red. This is useful for me because I need to isolate red to track my red ball. A mask blackens out everything that is not within a certain color range. Here's a picture of the mask in action:
 
 <img width="1223" alt="Screenshot 2025-07-07 at 9 53 15 AM" src="https://github.com/user-attachments/assets/a3513fde-9e06-47e6-95a4-ef2e3dcf9b55" />
-### Figure 4:
+### Figure 4 Picture of the Picam Using A Mask
 
 5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are identified by noticing the sudden change in color. For example, the computer can detect the contours around my ball that is on top of a black table by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the specific coordinates of the ball by averaging the contour points. Here's a picture of the contours shown as green points:
 
    <img width="1256" alt="Screenshot 2025-07-07 at 9 55 16 AM" src="https://github.com/user-attachments/assets/52e43df9-cddf-472b-a6d8-092fc1434a11" />
 
-### Figure 3:
+### Figure 3 Picture of the Picam Using Contour Detection
 ## Milestone 2 Video:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h3WfutsooX8?si=DJW7ErF61s7oUL5d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -125,12 +125,12 @@ The Raspberry Pi 4 is a mini-computer that is powered by a USB-C source. Powerin
 Another component in the L298N Driving Motor is the H-Bridge, which is a fascinating system that allows the driving motor to control direction.
 
 <img width="652" height="352" alt="Screenshot 2025-07-17 at 10 20 10 AM" src="https://github.com/user-attachments/assets/62b3cb7c-24a1-4029-be90-299fa89fb447" />
-### Figure 2:
+### Figure 2 Diagram of the L298N Driving Motor
 
 As you can see in the diagram, there are 4 switches, one GND, and one VCC. The power comes from the VCC, and if the top right and bottom left switches are on, the power flows in a counter-clockwise direction, making the motors spin in the same direction. However, if the top left and bottom right switches are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor to control the direction of the motor.
 
 <img width="942" alt="Screenshot 2025-07-07 at 11 58 07 AM" src="https://github.com/user-attachments/assets/7599743f-4bbe-407f-a6cb-58e955000324" />
-### Figure 1:
+### Figure 1 Scemtatic of the Motors
 
 ## Challenges:
 Some challenges I faced were that my motor was not working because I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply received, resulting in the motor not working. Another challenge I faced was that some of the wires that connected the L298N outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my SSH (a way of remotely coding onto my Raspberry Pi 4 without wires) disconnected many times. This stood out to me because I could not find a solution to this.
@@ -149,10 +149,10 @@ My next goal is to finish milestone 2. Completing this milestone will allow me t
 <!--- What your plan is to complete your project```-->
 
 # Schematics 
-## Scematic for Ultrasonic Sensors:
+## schematic for Ultrasonic Sensors:
 <img width="894" height="616" alt="Screenshot 2025-07-18 at 11 22 59 AM" src="https://github.com/user-attachments/assets/4381cf98-d991-4656-9658-5605374ffee5" />
 
-## Scematic for L298N Driving Motor:
+## schematic for L298N Driving Motor:
 <img width="942" alt="Screenshot 2025-07-07 at 11 58 07 AM" src="https://github.com/user-attachments/assets/7599743f-4bbe-407f-a6cb-58e955000324" />
 
 # Code
