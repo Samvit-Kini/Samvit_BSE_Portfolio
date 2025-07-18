@@ -48,47 +48,45 @@ In this modification, I faced many unexpected challenges. Out of them, there wer
 <!--```- A summary of key topics you learned about```-->
 <!--```- What you hope to learn in the future after everything you've learned at BSE ```-->
 ## Summary
-For my final milestone, my ball tracking robot can now track and follow the robot. For this milestone, I had to write code using Python on Visual Code that will be able to follow the ball. This code tracks whether the ball is to the left or right of the robot, and then follows it. Here's how my code works: 
-
+For my final milestone, my ball-tracking robot can now track and follow the ball. For this milestone, I had to write code using Python in Visual Studio Code that will be able to follow the ball. This code tracks whether the ball is to the left or right of the robot and then follows it. Here's how my code works:
 <img width="872" height="492" alt="Screenshot 2025-07-10 at 11 58 31 AM" src="https://github.com/user-attachments/assets/324eb8c7-726c-4ed5-a1c0-e0e195f75dd8" />
 
 ### Figure 4
 
 ## Chalenges
-A challenge I faced was that my robot kept on turning left and right, which sometimes led to the ball tracking robot to hit the ball off the table. I fixed this problem, by making the code first turn left/right. Once it's in position, then it will turn forward. However, other then that, there was not any major setbacks unlike my other milestones, and was quick unlike the other two. This was because most of the code was from the other milestones, and the only code I wrote was for the ball following system. 
+A challenge I faced was that my robot kept turning left and right, which sometimes led to the ball-tracking robot hitting the ball off the table. I fixed this problem by making the code first turn left/right. Once it was in position, then it would turn forward. However, other than that, there were not any major setbacks unlike my other milestones, and it was quick compared to the other two. This was because most of the code was from the other milestones, and the only code I wrote was for the ball-following system.
 
 ## What I learned through the milestones:
-I learned a lot from BSE, including the basics of circuts, to setting up masks and contours for ball tracking. Here's a list of the few things I learned from BSE:
-1. I learned the basics of circuting such as the power source and ground. I learned the different type of wires, and learned how to solder them to the circut board. I also learned Ohm's Law: which states that Current is equal to Volatage over Resistance.
-2. I learned about how to control DC motors with the L298N motor driver, and how to control pins using the Rasperry Pi 4.
-3. I learned how to use the Picam, and softwares like OpenCv to complete tasks like ball detection.
-4. I also learned about ultrasonic sensors which I use in modification 1. I learned how to connect the ultrasonic sensor to breadboards which is used to organize circuts.
-5. At Bluestamp, I learned how to find code, how to connect them to physical components, and how to make a lot of components work together to acomplish a task.
-
+I learned a lot from BSE, including the basics of circuits, to setting up masks and contours for ball tracking. Here's a list of the few things I learned from BSE:
+1. I learned the basics of circuits such as the power source and ground. I learned the different types of wires and how to solder them to the circuit board. I also learned Ohm's Law, which states that Current is equal to Voltage over Resistance.
+2. I learned about how to control DC motors with the L298N motor driver and how to control pins using the Raspberry Pi 4.
+3. I learned how to use the Picam and software like OpenCV to complete tasks like ball detection.
+4. I also learned about ultrasonic sensors, which I use in modification 1. I learned how to connect the ultrasonic sensor to breadboards, which are used to organize circuits.
+5. At Bluestamp, I learned how to find code, how to connect it to physical components, and how to make a lot of components work together to accomplish a task.
+   
 ## Next Steps
-My next steps would be to add a modification to my Ball Tracking Robot. This modification would be obstacle avoiding code. I will plan to use ultrasonic sensors to achieve this goal, by finding out the distance between any obstacle from the robot. One challenge I may face would be confusing the ball as an obstacle. After BlueStamp Engineering I plan to join the robotics team, and hope to learn more, and gain more experience for all kinds of apsects of engineering.
+My next steps would be to add a modification to my Ball Tracking Robot. This modification would involve adding obstacle-avoiding code. I plan to use ultrasonic sensors to achieve this goal by measuring the distance between any obstacles and the robot. One challenge I may face is confusing the ball with an obstacle. After BlueStamp Engineering, I plan to join the robotics team and hope to learn more and gain more experience in all aspects of engineering.
 
 # Second Milestone
 ## Summary
-For my second milestone, my objective was to create code that will allow my robot to track my red ball. This required many steps and a little code using libraries such as OpenCv. Unlike the first milestone that required barely any code, the second milestone was focused on coding. Here's how my code works: 
-1. Import important libraries such as picamera2, for easy access to my camera, which is the picamera.
-2. Second, I had to set up my camera's format, configure and start the camera.
-3. Third, I had to convert the original BGR(Blue, Green, Red) to HSV(Hue, Saturation, Value) color space, because using a HSV color space will make isolating a certain color for ball tracking easier.
-4. Fourth, I had to create a mask. A mask allows me to isolate a certain color, for example red. This is usefull for me because I need to isolate red to isolate my red ball. A mask blackens out everything that is not in a certain color range. Here's a picture of the mask in action:                                                                                                                                    <img width="1223" alt="Screenshot 2025-07-07 at 9 53 15 AM" src="https://github.com/user-attachments/assets/a3513fde-9e06-47e6-95a4-ef2e3dcf9b55" />
+For my second milestone, my objective was to create code that would allow my robot to track my red ball. This required many steps and some code using libraries such as OpenCV. Unlike the first milestone, which required barely any code, the second milestone was focused on coding. Here's how my code works:
+1. Import important libraries such as picamera2 for easy access to my camera, which is the picamera.
+2. Second, I had to set up my camera's format, configure, and start the camera.
+3. Third, I had to convert the original BGR (Blue, Green, Red) to HSV (Hue, Saturation, Value) color space because using an HSV color space makes isolating a certain color for ball tracking easier.
+4. Fourth, I had to create a mask. A mask allows me to isolate a certain color, for example, red. This is useful for me because I need to isolate red to track my red ball. A mask blackens out everything that is not within a certain color range. Here's a picture of the mask in action:                                                                                                                                  <img width="1223" alt="Screenshot 2025-07-07 at 9 53 15 AM" src="https://github.com/user-attachments/assets/a3513fde-9e06-47e6-95a4-ef2e3dcf9b55" />
 ### Figure 4:
 
-5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are detected by noticing the sudden change of color. For example, the computer can detect the contours around my ball that is on top of a black table, by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the certain coordinates of the ball by finding the average of the countours points. Here's a picture of the contours being shown as green points:
+5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are identified by noticing the sudden change in color. For example, the computer can detect the contours around my ball that is on top of a black table by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the specific coordinates of the ball by averaging the contour points. Here's a picture of the contours shown as green points:
    <img width="1256" alt="Screenshot 2025-07-07 at 9 55 16 AM" src="https://github.com/user-attachments/assets/52e43df9-cddf-472b-a6d8-092fc1434a11" />
 ### Figure 3:
 ## Milestone 2 Video:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h3WfutsooX8?si=DJW7ErF61s7oUL5d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Next Steps:
-For my next steps, I will need to work on my third milestone, which allows the ball-tracking robot to move towards the ball while avoiding any obstacles in its way. This will be my last milestone unless I add any modifications. I will achieve this goal by using the coordinates I got from the second milestone to tell if the ball is to the right or left of the robot.
+For my next steps, I will need to work on my third milestone, which allows the ball-tracking robot to move towards the ball while avoiding any obstacles in its way. This will be my last milestone unless I add any modifications. I will achieve this goal by using the coordinates I obtained from the second milestone to determine if the ball is to the right or left of the robot.
 
 ## Challenges:
-A major challenge I faced was getting the code to work. I had to change the code a lot because sometimes the color space wasn't getting changed, and sometimes the color range was not quite right. However, I was able to create code that works as shown below.
-
+A major challenge I faced was getting the code to work. I had to change the code a lot because sometimes the color space wasn't being changed, and sometimes the color range was not quite right. However, I was able to create code that works, as shown below.
 <!--
 ```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
@@ -102,34 +100,30 @@ v```- What needs to be completed before your final milestone ```
 -->
 # First Milestone
 ## Summary
-For my first milestone, I used Python to move the Ball Tracking Robot forward and back using motors. Reaching this goal took a couple of steps:
+For my first milestone, I used Python to move the Ball Tracking Robot forward and backward using motors. Reaching this goal took a couple of steps:
 
-1. My first step was to set up my Raspberry Pi 4. The goal of this step was to connect to the Pi remotely without connecting it to my computers with a lot of wires. This step made me follow a lot of instructions which was given to me by Blue Stamp Engineering. I was sometimes confused about which wires go where; however, it was relatively easy.
-2. My second step was to build the base of my robot, which came in a small kit including: a plastic base, two motors, two large wheels, one small rotating wheel, and a battery source. This also came with instructions, giving me small steps to build it.
+1. My first step was to set up my Raspberry Pi 4. The goal of this step was to connect to the Pi remotely without connecting it to my computer with a lot of wires. This step made me follow a lot of instructions provided by Blue Stamp Engineering. I was sometimes confused about which wires went where; however, it was relatively easy.
+2. My second step was to build the base of my robot, which came in a small kit including a plastic base, two motors, two large wheels, one small rotating wheel, and a battery source. This also came with instructions, giving me small steps to build it.
 3. My third step was to wire everything together. I had to wire the L298N motor with the Raspberry Pi 4, which allowed me to program instructions that get sent by the Pi. I also had to connect the L298N driving motor to the two motors in my base. This required some soldering, which I had some unexpected difficulties with.
-4. My final step was to write some simple code that tested the functionality of my motors. This code was mostly from viewing and understanding previous blue stamp engineering students, who had done the same project as I. After a few minor mistakes, I successfully made my motors run, thus finishing my first milestone.
+4. My final step was to write some simple code that tested the functionality of my motors. This code was mostly from viewing and understanding previous Blue Stamp Engineering students who had done the same project as I. After a few minor mistakes, I successfully made my motors run, thus finishing my first milestone.
 
-The Raspberry Pi 4 is a mini-computer that is powered by a USB-C source. Powering it allows me to run code through the Raspberry Pi, allowing me to control other components on the Ball Tracking Robot. The L298N is a driving motor powered by 5 1.5-volt batteries. The driving motor gets its power through the VS and ground pin, and outputs instructions to the motor from Output 1-4. The driving motor receives instructions from the Raspberry Pi 4 from pins: ENA, ENB and IN 1-4. The inputs receive code that controls the direction of the motor, and the ENA and ENB pins receive code that controls the speed of the motors.
+The Raspberry Pi 4 is a mini-computer that is powered by a USB-C source. Powering it allows me to run code through the Raspberry Pi, enabling me to control other components on the Ball Tracking Robot. The L298N is a driving motor powered by five 1.5-volt batteries. The driving motor gets its power through the VS and ground pin and outputs instructions to the motor from Output 1-4. The driving motor receives instructions from the Raspberry Pi 4 from pins: ENA, ENB, and IN 1-4. The inputs receive code that controls the direction of the motor, and the ENA and ENB pins receive code that controls the speed of the motors.
 
 Another component in the L298N Driving Motor is the H-Bridge, which is a fascinating system that allows the driving motor to control direction.
 
-Another component in the L298N Driving Motor is the H-Bridge, which is a facinating system that allows the driving motor to control direction.
-
 <img width="652" height="352" alt="Screenshot 2025-07-17 at 10 20 10 AM" src="https://github.com/user-attachments/assets/62b3cb7c-24a1-4029-be90-299fa89fb447" />
-
-
 ### Figure 2:
 
-As you can see in the diagram there are 4 switches, one GND and one VCC. The power comes from the VCC, and if the top right and bottom left switch are on, the power flows in a counter-clockwise direction, making the motors spin in the same  direction. However, if the top left and bottom right switch are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor control the direction of the motor.
+As you can see in the diagram, there are 4 switches, one GND, and one VCC. The power comes from the VCC, and if the top right and bottom left switches are on, the power flows in a counter-clockwise direction, making the motors spin in the same direction. However, if the top left and bottom right switches are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor to control the direction of the motor.
 
 <img width="942" alt="Screenshot 2025-07-07 at 11 58 07 AM" src="https://github.com/user-attachments/assets/7599743f-4bbe-407f-a6cb-58e955000324" />
 ### Figure 1:
 
 ## Challenges:
-Some challenges I faced were that my motor was not working because, I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply recieved, resulting the motor not working. Another challenge I faced was that some of the wires that connected the L298N's outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my ssh(a way of remotely coding onto my raspberry pi 4, without wires) discconected many time. This stood out to me, because I could not find a solution to this.
+Some challenges I faced were that my motor was not working because I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply received, resulting in the motor not working. Another challenge I faced was that some of the wires that connected the L298N outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my SSH (a way of remotely coding onto my Raspberry Pi 4 without wires) disconnected many times. This stood out to me because I could not find a solution to this.
 
 ## My Next Steps:
-My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential in my Ball Tracking Robot. To complete milestone 2, I will have to use picamera (a camera attachible to my raspberry pi), and the open cv software. I will have to create a mask, a mask allows me to only see objects in a certain range of colors. This will be able to track my ball, because the mask will be in the same color range as my ball, which make the ball one of the only objects visiable to my picamera.
+My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential for my Ball Tracking Robot. To complete milestone 2, I will have to use a PiCamera (a camera attachable to my Raspberry Pi) and OpenCV software. I will need to create a mask; a mask allows me to only see objects in a certain range of colors. This will enable me to track my ball because the mask will be in the same color range as my ball, which makes the ball one of the only objects visible to my PiCamera.
 
 <!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
@@ -541,13 +535,11 @@ GPIO.output(MOTOR2E, GPIO.LOW)
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 -->
 # Starter Project: RGB Sliders
-The starter project I chose was the RGB sliders. I chose this because building these sliders will help me practice essential skills like soldering before I start my main project. There are three sliders in my project, one controlling red light, one controlling blue, and one controlling green. These LED lights are powered by a charger via the USB port located on the top right of the sliders. The three LEDs' lights blend together into one color allowing the sliders to emmit a spectrum of colors. 
-
+The starter project I chose was the RGB sliders. I chose this because building these sliders will help me practice essential skills like soldering before I start my main project. There are three sliders in my project: one controlling red light, one controlling blue, and one controlling green. These LED lights are powered by a charger via the USB port located on the top right of the sliders. The three LEDs' lights blend together into one color, allowing the sliders to emit a spectrum of colors.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/COZAjiJK3ME?si=7rq4b5ZN2UaWGZ0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Challenges:
-A chalenge I faced was that sometimes the solder sometimes spilled into another spot, creating a connection between two pins, which is a problem. To deal with this problem, I had to remove the solder. Which led me to use the desoldering tool, which sucked the solder out when the solder was at a liquid state. I soon succesfully removed all the mistake, allowing me to re-solder and complete the project. This challenge helped me master desoldering, which is benificial if I make a mistake in any of my future projects. My next steps are to work on my main project, which is the Ball Tracking Robot. I next few steps are to build the base of the robot, adding motors to allowing it to move. 
-
+A challenge I faced was that sometimes the solder spilled into another spot, creating a connection between two pins, which is a problem. To deal with this problem, I had to remove the solder, which led me to use the desoldering tool that sucked the solder out when it was in a liquid state. I soon successfully removed all the mistakes, allowing me to re-solder and complete the project. This challenge helped me master desoldering, which is beneficial if I make a mistake in any of my future projects. My next steps are to work on my main project, which is the Ball Tracking Robot. The next few steps are to build the base of the robot and add motors to allow it to move.
 
 
 
