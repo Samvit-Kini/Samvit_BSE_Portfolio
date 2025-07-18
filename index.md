@@ -21,7 +21,7 @@ Here is a schematic of how I connected the ultrasonic sensors to my Raspberry Pi
 
 <img width="911" height="589" alt="Screenshot 2025-07-18 at 12 15 44 PM" src="https://github.com/user-attachments/assets/84d66737-a6b7-42ab-8c5e-a8e993c1fae0" />
 
-### Figure 6 Ultrasonic Sensors Schematic
+### Figure 7 Ultrasonic Sensors Schematic
 
 In addition to the ultrasonic sensors, I added a breadboard, which allows me to organize my wiring and easily connect the ultrasonic sensors to the Raspberry Pi. I also added a case for my ball-tracking robot, so it looks cleaner. The case is shown covering the components in the final picture.
 
@@ -29,7 +29,7 @@ Here is the schematic of the case I built:
 
 <img width="872" height="565" alt="Screenshot 2025-07-18 at 12 02 47 PM" src="https://github.com/user-attachments/assets/7cad591b-2d67-45ce-960c-2e50e94f8c45" />
 
-### Figure 5 Drawing of Case
+### Figure 6 Drawing of Case
 
 ## Challenges
 In this modification, I faced many unexpected challenges. Out of them, there were two challenges that stood out to me:
@@ -59,7 +59,7 @@ For my final milestone, my ball-tracking robot can now track and follow the ball
 
 <img width="872" height="492" alt="Screenshot 2025-07-10 at 11 58 31 AM" src="https://github.com/user-attachments/assets/324eb8c7-726c-4ed5-a1c0-e0e195f75dd8" />
 
-### Figure 4 Diagram of How the Code Works
+### Figure 5 Diagram of How the Code Works
 
 ## Chalenges
 A challenge I faced was that my robot kept turning left and right, which sometimes led to the ball-tracking robot hitting the ball off the table. I fixed this problem by making the code first turn left/right. Once it was in position, then it would turn forward. However, other than that, there were not any major setbacks unlike my other milestones, and it was quick compared to the other two. This was because most of the code was from the other milestones, and the only code I wrote was for the ball-following system.
