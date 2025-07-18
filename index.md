@@ -26,6 +26,7 @@ Here is a scematic of how I connected the ultrasonic sensors to my Raspberry Pi 
 In addition to the ultrasonic sensors, I added a breadboard, which allows me to organize my wiring and easily connect the ultrasonic sensors to the Raspberry Pi. I also added a case for my ball-tracking robot, so it looks cleaner. The case is shown covering the components in the final picture.
 
 Here is the scematic of the case I built:
+
 <img width="685" height="421" alt="Screenshot 2025-07-18 at 11 03 52 AM" src="https://github.com/user-attachments/assets/459c786f-38c5-4e2b-8e4a-1a50b26f7ed1" />
 
 ### Figure 5
@@ -55,6 +56,7 @@ In this modification, I faced many unexpected challenges. Out of them, there wer
 <!--```- What you hope to learn in the future after everything you've learned at BSE ```-->
 ## Summary
 For my final milestone, my ball-tracking robot can now track and follow the ball. For this milestone, I had to write code using Python in Visual Studio Code that will be able to follow the ball. This code tracks whether the ball is to the left or right of the robot and then follows it. Here's how my code works:
+
 <img width="872" height="492" alt="Screenshot 2025-07-10 at 11 58 31 AM" src="https://github.com/user-attachments/assets/324eb8c7-726c-4ed5-a1c0-e0e195f75dd8" />
 
 ### Figure 4
@@ -79,13 +81,18 @@ For my second milestone, my objective was to create code that would allow my rob
 1. Import important libraries such as picamera2 for easy access to my camera, which is the picamera.
 2. Second, I had to set up my camera's format, configure, and start the camera.
 3. Third, I had to convert the original BGR (Blue, Green, Red) to HSV (Hue, Saturation, Value) color space because using an HSV color space makes isolating a certain color for ball tracking easier.
-4. Fourth, I had to create a mask. A mask allows me to isolate a certain color, for example, red. This is useful for me because I need to isolate red to track my red ball. A mask blackens out everything that is not within a certain color range. Here's a picture of the mask in action:                                                                                                                                  <img width="1223" alt="Screenshot 2025-07-07 at 9 53 15 AM" src="https://github.com/user-attachments/assets/a3513fde-9e06-47e6-95a4-ef2e3dcf9b55" />
+4. Fourth, I had to create a mask. A mask allows me to isolate a certain color, for example, red. This is useful for me because I need to isolate red to track my red ball. A mask blackens out everything that is not within a certain color range. Here's a picture of the mask in action:
+
+<img width="1223" alt="Screenshot 2025-07-07 at 9 53 15 AM" src="https://github.com/user-attachments/assets/a3513fde-9e06-47e6-95a4-ef2e3dcf9b55" />
 ### Figure 4:
 
 5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are identified by noticing the sudden change in color. For example, the computer can detect the contours around my ball that is on top of a black table by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the specific coordinates of the ball by averaging the contour points. Here's a picture of the contours shown as green points:
+
    <img width="1256" alt="Screenshot 2025-07-07 at 9 55 16 AM" src="https://github.com/user-attachments/assets/52e43df9-cddf-472b-a6d8-092fc1434a11" />
+
 ### Figure 3:
 ## Milestone 2 Video:
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h3WfutsooX8?si=DJW7ErF61s7oUL5d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Next Steps:
