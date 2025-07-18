@@ -1,5 +1,5 @@
 # Ball Tracking Robot
-The ball tracking robot, is a motor driven robot that is able to track a ball. It is able to track a red ball and is able to make it's way to the ball.
+The ball tracking robot, is a motor driven robot that is able to track a ball. It is controlled by the Raspberry Pi, which I can send instructions to other components through. The robot is able to track, 
 
  
 <!--HTML You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
@@ -16,7 +16,7 @@ HTML
 
 # Modification 1 
 ## Summary
-This modification allows my ball tracking robot to avoid any obstacles in it's path to the ball. This modification used ultrasonic sensors, to detect the distance of the the closest object from the robot. Here's how my ultrasonic sensors work, they send out pulses of sound that we cannot hear, and detects the distance of the nearest object by using the time it takes for the echo to come back and divides it by the speed of sound. I use three of these ultrasonic sensors to find out if there are any objects other then the ball in the robot's path. If there is an object, I avoid the object by using code to move around the obstacle. 
+This modification allows my ball tracking robot to avoid any obstacles in its path to the ball. This modification uses ultrasonic sensors to detect the distance of the closest object from the robot. Here's how my ultrasonic sensors work: they send out pulses of sound that we cannot hear, and detect the distance of the nearest object by using the time it takes for the echo to come back and dividing it by the speed of sound. I use three of these ultrasonic sensors to find out if there are any objects other than the ball in the robot's path. If there is an object, I avoid it by using code to move around the obstacle.
 
 Here is a scematic of how I connected the ultrasonic sensors to my Raspberry Pi 4:
 
@@ -28,8 +28,10 @@ In addition to the ultrasonic sensors, I added the bread board which allows me t
 
 ## Challenges
 In this modification, I faced many unexpected challenges. Out of them, there were two challenges that stood out to me:
-1. The first challenge was that the Ball TRacking Robot kept moving to far in one certain direction. To fix this problem, I had to juggle around with my code, and had to make sure my robot stopped moving, after it fullfilled a certain goal. This challenge took me the longest amount of time, but I fixed the code.
-2. The second challenge that stood out to me, was a bit of a setback. The setback was that my Raspberry Pi board stopped working. The reason is unknown, but I had to restart setting up the board. This required me to rewire many things, and forced me to repeat the downloading procces. The downloading took a long time, forcing me to waste a day at Bluestamp, resetting up my Pi.
+
+1. The first challenge was that the Ball Tracking Robot kept moving too far in one certain direction. To fix this problem, I had to juggle around with my code and ensure my robot stopped moving after it fulfilled a certain goal. This challenge took me the longest amount of time, but I fixed the code.
+
+2. The second challenge that stood out to me was a bit of a setback. The setback was that my Raspberry Pi board stopped working. The reason is unknown, but I had to restart setting up the board. This required me to rewire many things and forced me to repeat the downloading process. The downloading took a long time, forcing me to waste a day at Bluestamp resetting up my Pi.
 
 
 
