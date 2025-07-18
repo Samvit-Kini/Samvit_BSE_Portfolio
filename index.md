@@ -19,7 +19,7 @@ This modification allows my ball tracking robot to avoid any obstacles in its pa
 
 Here is a scematic of how I connected the ultrasonic sensors to my Raspberry Pi 4:
 
-<img width="953" height="590" alt="Screenshot 2025-07-17 at 10 18 14 AM" src="https://github.com/user-attachments/assets/4c5ac531-2600-4d7a-8bd2-d690b7974bc2" />
+<img width="894" height="616" alt="Screenshot 2025-07-18 at 11 22 59 AM" src="https://github.com/user-attachments/assets/4381cf98-d991-4656-9658-5605374ffee5" />
 
 ### Figure 6
 
@@ -150,7 +150,7 @@ My next goal is to finish milestone 2. Completing this milestone will allow me t
 
 # Schematics 
 ## Scematic for Ultrasonic Sensors:
-<img width="953" height="590" alt="Screenshot 2025-07-17 at 10 18 14 AM" src="https://github.com/user-attachments/assets/4c5ac531-2600-4d7a-8bd2-d690b7974bc2" />
+<img width="894" height="616" alt="Screenshot 2025-07-18 at 11 22 59 AM" src="https://github.com/user-attachments/assets/4381cf98-d991-4656-9658-5605374ffee5" />
 
 ## Scematic for L298N Driving Motor:
 <img width="942" alt="Screenshot 2025-07-07 at 11 58 07 AM" src="https://github.com/user-attachments/assets/7599743f-4bbe-407f-a6cb-58e955000324" />
