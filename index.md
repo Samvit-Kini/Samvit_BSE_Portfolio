@@ -1,6 +1,5 @@
 # Ball Tracking Robot
-The ball tracking robot, is a motor driven robot that is able to track a ball. It is controlled by the Raspberry Pi, which I can send instructions to other components through. The robot is able to track, 
-
+The ball-tracking robot is a motor-driven robot that can track a ball. It is controlled by the Raspberry Pi, which I can use to send instructions to other components. The robot is able to track any red objects using contour detection and masks to isolate the ball. In addition to this, I made the robot capable of avoiding any obstacles in its path to the ball.
  
 <!--HTML You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 HTML 
@@ -22,9 +21,14 @@ Here is a scematic of how I connected the ultrasonic sensors to my Raspberry Pi 
 
 <img width="953" height="590" alt="Screenshot 2025-07-17 at 10 18 14 AM" src="https://github.com/user-attachments/assets/4c5ac531-2600-4d7a-8bd2-d690b7974bc2" />
 
-### Figure 5
+### Figure 6
 
-In addition to the ultrasonic sensors, I added the bread board which allows me to organize my wiring and allow me to easily connect the ultrasonic sensors to the Raspberry Pi.
+In addition to the ultrasonic sensors, I added a breadboard, which allows me to organize my wiring and easily connect the ultrasonic sensors to the Raspberry Pi. I also added a case for my ball-tracking robot, so it looks cleaner. The case is shown covering the components in the final picture.
+
+Here is the scematic of the case I built:
+<img width="685" height="421" alt="Screenshot 2025-07-18 at 11 03 52 AM" src="https://github.com/user-attachments/assets/459c786f-38c5-4e2b-8e4a-1a50b26f7ed1" />
+
+### Figure 5
 
 ## Challenges
 In this modification, I faced many unexpected challenges. Out of them, there were two challenges that stood out to me:
@@ -33,7 +37,9 @@ In this modification, I faced many unexpected challenges. Out of them, there wer
 
 2. The second challenge that stood out to me was a bit of a setback. The setback was that my Raspberry Pi board stopped working. The reason is unknown, but I had to restart setting up the board. This required me to rewire many things and forced me to repeat the downloading process. The downloading took a long time, forcing me to waste a day at Bluestamp resetting up my Pi.
 
+## Here's a demo of my Ball Tracking Robot
 
+## Here's my video explaining how it works.
 
 # Final Milestone
 
