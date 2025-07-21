@@ -114,7 +114,7 @@ v```- What needs to be completed before your final milestone ```
 -->
 # First Milestone
 ## Summary
-For my first milestone, I used Python to move the Ball Tracking Robot forward and backwards using motors. Reaching this goal took a couple of steps:
+For my first milestone, I used Python to move the Ball Tracking Robot forward and backward using motors. Reaching this goal took a couple of steps:
 
 1. My first step was to set up my Raspberry Pi 4. The goal of this step was to connect to the Pi remotely without connecting it to my computer with a lot of wires. This step made me follow a lot of the instructions provided by Blue Stamp Engineering. I was sometimes confused about which wires went where; however, it was relatively easy.
 2. My second step was to build the base of my robot, which came in a small kit including a plastic base, two motors, two large wheels, one small rotating wheel, and a battery source. This also came with instructions, giving me small steps to build it.
@@ -134,12 +134,12 @@ As you can see in the diagram, there are 4 switches, one GND, and one VCC. The p
 ### Figure 1 Schematic of the Motors
 
 ## Challenges:
-Some challenges I faced were that my motor was not working because I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply received, resulting in the motor not working. Another challenge I faced was that some of the wires that connected the L298N outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my SSH (a way of remotely coding onto my Raspberry Pi 4 without wires) disconnected many times. This stood out to me because I could not find a solution to this.
+Some challenges I faced were that my motor was not working because I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply received, resulting in the motor not working. Another challenge I faced was that some of the wires that connected the L298N outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was that my SSH (a way of remotely coding onto my Raspberry Pi 4 without wires) disconnected many times. This stood out to me because I could not find a solution to this.
 
 ## My Next Steps:
 My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential for my Ball Tracking Robot. To complete milestone 2, I will have to use a PiCamera (a camera attachable to my Raspberry Pi) and OpenCV software. I will need to create a mask; a mask allows me to only see objects in a certain range of colors. This will enable me to track my ball because the mask will be in the same color range as my ball, which makes the ball one of the only objects visible to my PiCamera.
 
-<!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
+<!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to YouTube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
 <!--```<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>```
 
