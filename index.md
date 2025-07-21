@@ -80,14 +80,14 @@ My next steps would be to add a modification to my Ball Tracking Robot. This mod
 For my second milestone, my objective was to create code that would allow my robot to track my red ball. This required many steps and some code using libraries such as OpenCV. Unlike the first milestone, which required barely any code, the second milestone was focused on coding. Here's how my code works:
 1. Import important libraries such as picamera2 for easy access to my camera, which is the picamera.
 2. Second, I had to set up my camera's format, configure it, and start the camera.
-3. Third, I had to convert the original BGR (Blue, Green, Red) to HSV (Hue, Saturation, Value) colour space because using an HSV colour space makes isolating a certain colour for ball tracking easier.
-4. Fourth, I had to create a mask. A mask allows me to isolate a certain colour, for example, red. This is useful for me because I need to isolate red to track my red ball. A mask blackens out everything that is not within a certain colour range. Here's a picture of the mask in action:
+3. Third, I had to convert the original BGR (Blue, Green, Red) to HSV (Hue, Saturation, Value) color space because using an HSV color space makes isolating a certain color for ball tracking easier.
+4. Fourth, I had to create a mask. A mask allows me to isolate a certain color, for example, red. This is useful for me because I need to isolate red to track my red ball. A mask blackens out everything that is not within a certain color range. Here's a picture of the mask in action:
 
 <img width="1223" alt="Screenshot 2025-07-07 at 9 53 15 AM" src="https://github.com/user-attachments/assets/a3513fde-9e06-47e6-95a4-ef2e3dcf9b55" />
 
 ### Figure 4 Picture of the Picam Using A Mask
 
-5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are identified by noticing the sudden colour change. For example, the computer can detect the contours around my ball that is on top of a black table by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the specific coordinates of the ball by averaging the contour points. Here's a picture of the contours shown as green points:
+5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are identified by noticing the sudden color change. For example, the computer can detect the contours around my ball that is on top of a black table by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the specific coordinates of the ball by averaging the contour points. Here's a picture of the contours shown as green points:
 
    <img width="1256" alt="Screenshot 2025-07-07 at 9 55 16 AM" src="https://github.com/user-attachments/assets/52e43df9-cddf-472b-a6d8-092fc1434a11" />
 
@@ -100,7 +100,7 @@ For my second milestone, my objective was to create code that would allow my rob
 For my next steps, I will need to work on my third milestone, which allows the ball-tracking robot to move towards the ball while avoiding any obstacles in its way. This will be my last milestone unless I add any modifications. I will achieve this goal by using the coordinates I obtained from the second milestone to determine if the ball is to the right or left of the robot.
 
 ## Challenges:
-A major challenge I faced was getting the code to work. I had to change the code a lot because sometimes the colour space wasn't being changed, and sometimes the colour range was not quite right. However, I was able to create code that works, as shown below.
+A major challenge I faced was getting the code to work. I had to change the code a lot because sometimes the color space wasn't being changed, and sometimes the color range was not quite right. However, I was able to create code that works, as shown below.
 <!--
 ```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
@@ -137,7 +137,7 @@ As you can see in the diagram, there are 4 switches, one GND, and one VCC. The p
 Some challenges I faced were that my motor was not working because I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply received, resulting in the motor not working. Another challenge I faced was that some of the wires that connected the L298N outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my SSH (a way of remotely coding onto my Raspberry Pi 4 without wires) disconnected many times. This stood out to me because I could not find a solution to this.
 
 ## My Next Steps:
-My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential for my Ball Tracking Robot. To complete milestone 2, I will have to use a PiCamera (a camera attachable to my Raspberry Pi) and OpenCV software. I will need to create a mask; a mask allows me to only see objects in a certain range of colours. This will enable me to track my ball because the mask will be in the same colour range as my ball, which makes the ball one of the only objects visible to my PiCamera.
+My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential for my Ball Tracking Robot. To complete milestone 2, I will have to use a PiCamera (a camera attachable to my Raspberry Pi) and OpenCV software. I will need to create a mask; a mask allows me to only see objects in a certain range of colors. This will enable me to track my ball because the mask will be in the same color range as my ball, which makes the ball one of the only objects visible to my PiCamera.
 
 <!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
