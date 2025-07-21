@@ -159,7 +159,7 @@ My next goal is to finish milestone 2. Completing this milestone will allow me t
 # Code
 ## Final Code (For Modification 1)
 ```
-# Importing Necessary Software
+# Importing Necessary Softwares
 import picamera2
 from time import sleep
 import os
@@ -171,15 +171,18 @@ import time
 from gpiozero import DistanceSensor, Motor
 GPIO.setmode(GPIO.BOARD)
 
+
 # Giving Names to each of the Ultrasonic Sensors
 ultrasonic_left = DistanceSensor(echo=17, trigger=4)
 ultrasonic_front = DistanceSensor(echo=9, trigger=10)
 ultrasonic_right = DistanceSensor(echo=22, trigger=27)
 
-# Giving Names to the motors, and the numbers are the pins on the Raspberry Pi
+
+# Giving Names to the motors, and the numbers are the pins on the raspberry pi
 # that the motors are connected to
 motor_left = Motor(forward=23,backward=24)
 motor_right = Motor(forward=26,backward=16)
+
 
 # Allowing the Ultrasonic Sensors to get more distance
 ultrasonic_front.max_distance = 10000000
@@ -187,73 +190,79 @@ ultrasonic_front.threshold_distance = 20
 ultrasonic_left.max_distance = 10000000
 ultrasonic_left.threshold_distance = 20
 ultrasonic_right.max_distance = 10000000
-ultrasonic_right.threshold_distance = 20 
+ultrasonic_right.threshold_distance = 20
 last_x = 0
+
 
 # Writing functions for moving the robot, so I do not need to rewrite everything
 def move_backward():
-   motor_left.forward(0.5)
-   motor_right.forward(0.5)
+  motor_left.forward(0.5)
+  motor_right.forward(0.5)
 def stop_move():
-   motor_left.stop()
-   motor_right.stop()
+  motor_left.stop()
+  motor_right.stop()
 def move_right():
-   motor_left.backward(0.5)
-   motor_right.forward(0.5)
+  motor_left.backward(0.4)
+  motor_right.forward(0.4)
 def move_left():
-   motor_left.forward(0.5)
-   motor_right.backward(0.5)
+  motor_left.forward(0.4)
+  motor_right.backward(0.4)
 def move_forward():
-   motor_left.backward(0.5)
-   motor_right.backward(0.5)
+  motor_left.backward(0.5)
+  motor_right.backward(0.5)
+
 
 # Function that takes a picture, and find the coordinates of the ball
 def find_ball():
-   global last_x
-   # Take each frame
-   frame_old = cam.capture_array()
-   frame = cv2.cvtColor(frame_old, cv2.COLOR_RGB2BGR)
+  global last_x
+  # Take each frame
+  frame_old = cam.capture_array()
+  frame = cv2.cvtColor(frame_old, cv2.COLOR_RGB2BGR)
 
 
-   # Convert BGR to HSV
-   hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-   # define range of red color in HSV
-   lower_red = np.array([155,80,200])
-   upper_red = np.array([179,255,255])
-   # Threshold the HSV image to get only red    colors
-   mask = cv2.inRange(hsv, lower_red, upper_red)
-   kern_dilate = np.ones((8,8),np.uint8)
-   kern_erode  = np.ones((3,3),np.uint8)
-    
-   mask = cv2.resize(mask, (320, 240)) # resize to reduce resolution/improve performance
-   mask= cv2.erode(mask,kern_erode)      # erode to approximate color
-   mask=cv2.dilate(mask,kern_dilate)     # dilate to blur
 
 
-   #The Following Code finds the contours, or the points that surround the ball,
-   #and finding the average of those, to find the center of the ball
-   contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-   if len(contours) != 0:
-       shape = max(contours, key=cv2.contourArea)
-       area = cv2.contourArea(shape)
-       average_x = 0
-       average_y = 0
-       for n in shape:
-           x= n[0][0]
-           average_x += x
-           y = n[0][1]
-           average_y += y
-       number_points = len(shape)
-       x_cord = average_x/number_points
-       y_cord = average_y/number_points
-       #The Following Code shows what the picam is seeing
-       cv2.imshow('frame',frame)
-       cv2.imshow('mask',mask)
-       last_x = x_cord
-       return (x_cord, area)
-   else:
-       return (last_x, 0)
-   
+  # Convert BGR to HSV
+  hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+  # define range of red color in HSV
+  lower_red = np.array([155,80,200])
+  upper_red = np.array([179,255,255])
+  # Threshold the HSV image to get only red    colors
+  mask = cv2.inRange(hsv, lower_red, upper_red)
+  kern_dilate = np.ones((8,8),np.uint8)
+  kern_erode  = np.ones((3,3),np.uint8)
+  
+  mask = cv2.resize(mask, (320, 240)) # resize to reduce resolution/improve performance
+  mask= cv2.erode(mask,kern_erode)      # erode to approximate color
+  mask=cv2.dilate(mask,kern_dilate)     # dilate to blur
+
+
+
+
+  #The Following Code finds the contours, or the points that surround the ball,
+  #and finding the average of those, to find the center of the ball
+  contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+  if len(contours) != 0:
+      shape = max(contours, key=cv2.contourArea)
+      area = cv2.contourArea(shape)
+      average_x = 0
+      average_y = 0
+      for n in shape:
+          x= n[0][0]
+          average_x += x
+          y = n[0][1]
+          average_y += y
+      number_points = len(shape)
+      x_cord = average_x/number_points
+      y_cord = average_y/number_points
+      #The Following Code shows what the picam is seeing
+      cv2.imshow('frame',frame)
+      cv2.imshow('mask',mask)
+      last_x = x_cord
+      return (x_cord, area)
+  else:
+      return (last_x, 0)
+ 
 #setting up the camera
 cam = Picamera2()
 config = cam.create_video_configuration(main = {'format': 'BGR888'})
@@ -261,61 +270,55 @@ cam.configure(config)
 cam.start()
 
 
+
+
 # Code for obstacle avoidance modification 1
 def obstacle_avoidance():
-    x_cord, area = find_ball()
+   x_cord, area = find_ball()
 # I believe there are only two possible obstacles, one toward the right, or left,
-    if area < 7500:
-        if ultrasonic_left.distance < 0.1 or ultrasonic_right.distance < 0.1:
-        
-           if ultrasonic_left.distance < 0.1:
-               move_right()
-               while ultrasonic_front.distance < 0.125 and ultrasonic_left.distance < 0.1:
-                   move_right()
-               while ultrasonic_left.distance < 0.1:
-                   move_right()
-           if ultrasonic_right.distance < 0.1:
-               move_left()
-               while ultrasonic_front.distance < 0.125 and ultrasonic_right.distance < 0.1:
-                   move_left()
-               while ultrasonic_right.distance < 0.1:
-                   move_left()
-           stop_move()
-        else:
-            while ultrasonic_right.distance > 0.1 and ultrasonic_left.distance > 0.1:
-                move()
-    else:
-        stop_move()
+   if area < 7500:
+       if ultrasonic_left.distance < 0.1 or ultrasonic_right.distance < 0.1:
+      
+          if ultrasonic_left.distance < 0.1:
+              while ultrasonic_left.distance < 0.1:
+                  move_right()
+                  print(ultrasonic_left.distance)
+          if ultrasonic_right.distance < 0.1:
+              while ultrasonic_right.distance < 0.1:
+                  move_left()
+          stop_move()
+       else:
+           while ultrasonic_right.distance > 0.1 and ultrasonic_left.distance > 0.1:
+               move()
+   else:
+       stop_move()
+
 
 # Function for moving
 def move():
-       x_cord, area = find_ball()
-       print(area)
-       if area < 7500:
-           if area == 0:
-               if x_cord > 160:
-                   move_left()
-               else:
-                   move_right()
-           elif x_cord > 260 or x_cord < 60:
-               print(x_cord)
-               if x_cord > 260:
-                   move_left()
-               else:
-                   move_right()
-           else:
-               move_forward()
-       else:
-           stop_move()
-       return area 
+      x_cord, area = find_ball()
+      if area < 7500:
+          if area == 0:
+              if x_cord > 160:
+                  move_left()
+              else:
+                  move_right()
+          elif x_cord > 260 or x_cord < 60:
+              if x_cord > 260:
+                  move_left()
+              else:
+                  move_right()
+          else:
+              move_forward()
+      else:
+          stop_move()
+      return area
+
 
 while(1):
-   #The follow code allows the robot to move towards the ball
-    obstacle_avoidance()
+  #The follow code allows the robot to move towards the ball
+   obstacle_avoidance()
 cv2.destroyAllWindows()
-
-
-
  ```
 
 ## Ball Tracking Code for Milestone 3:
