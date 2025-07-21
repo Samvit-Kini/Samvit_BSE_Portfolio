@@ -1,5 +1,5 @@
 # Ball Tracking Robot
-The ball-tracking robot is a motor-driven robot that can track a ball. It is controlled by the Raspberry Pi, which I can use to send instructions to other components. The robot is able to track any red objects using contour detection and masks to isolate the ball. In addition to this, I made the robot capable of avoiding any obstacles in its path to the ball.
+The ball-tracking robot is a motor-driven robot that can track a ball. It is controlled by the Raspberry Pi, which I can use to send instructions to other components. The robot can track any red objects using contour detection and masks to isolate the ball. Additionally, I made the robot capable of avoiding any obstacles in its path to the ball.
  
 <!--HTML You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 HTML 
@@ -15,7 +15,7 @@ HTML
 
 # Modification 1 
 ## Summary
-This modification allows my ball tracking robot to avoid any obstacles in its path to the ball. This modification uses ultrasonic sensors to detect the distance of the closest object from the robot. Here's how my ultrasonic sensors work: they send out pulses of sound that we cannot hear, and detect the distance of the nearest object by using the time it takes for the echo to come back and dividing it by the speed of sound. I use three of these ultrasonic sensors to find out if there are any objects other than the ball in the robot's path. If there is an object, I avoid it by using code to move around the obstacle.
+This modification allows my ball-tracking robot to avoid any obstacles in its path to the ball. This modification uses ultrasonic sensors to detect the distance of the closest object from the robot. Here's how my ultrasonic sensors work: they send out pulses of sound that we cannot hear, and detect the distance of the nearest object by measuring the time it takes for the echo to return and dividing it by the speed of sound. I use three of these ultrasonic sensors to find out if there are any objects other than the ball in the robot's path. If there is an object, I avoid it by using code to move around the obstacle.
 
 Here is a schematic of how I connected the ultrasonic sensors to my Raspberry Pi 4:
 
@@ -23,20 +23,20 @@ Here is a schematic of how I connected the ultrasonic sensors to my Raspberry Pi
 
 ### Figure 7 Ultrasonic Sensors Schematic
 
-In addition to the ultrasonic sensors, I added a breadboard, which allows me to organize my wiring and easily connect the ultrasonic sensors to the Raspberry Pi. I also added a case for my ball-tracking robot, so it looks cleaner. The case is shown covering the components in the final picture.
+In addition to the ultrasonic sensors, I added a breadboard, which allows me to organise my wiring and easily connect the ultrasonic sensors to the Raspberry Pi. I also added a case for my ball-tracking robot, so it looks cleaner. The case is shown covering the components in the final picture.
 
 Here is the schematic of the case I built:
 
 <img width="872" height="565" alt="Screenshot 2025-07-18 at 12 02 47 PM" src="https://github.com/user-attachments/assets/7cad591b-2d67-45ce-960c-2e50e94f8c45" />
 
-### Figure 6 Drawing of Case
+### Figure 6: Drawing of the Case
 
 ## Challenges
-In this modification, I faced many unexpected challenges. Out of them, there were two challenges that stood out to me:
+In this modification, I faced many unexpected challenges. Out of them, two challenges stood out to me:
 
-1. The first challenge was that the Ball Tracking Robot kept moving too far in one certain direction. To fix this problem, I had to juggle around with my code and ensure my robot stopped moving after it fulfilled a certain goal. This challenge took me the longest amount of time, but I fixed the code.
+1. The first challenge was that the Ball Tracking Robot kept moving too far in one direction. To fix this problem, I had to juggle around with my code and ensure my robot stopped moving after it fulfilled a certain goal. This challenge took me the longest amount of time, but I fixed the code.
 
-2. The second challenge that stood out to me was a bit of a setback. The setback was that my Raspberry Pi board stopped working. The reason is unknown, but I had to restart setting up the board. This required me to rewire many things and forced me to repeat the downloading process. The downloading took a long time, forcing me to waste a day at Bluestamp resetting up my Pi.
+2. The second challenge that stood out to me was a bit of a setback. The setback was that my Raspberry Pi board stopped working. The reason is unknown, but I had to restart setting up the board. This required me to rewire many things and forced me to repeat the downloading process. The downloading took a long time, forcing me to waste a day at Bluestamp setting up my Pi.
 
 ## Here's a demo of my Ball Tracking Robot
 
@@ -55,18 +55,18 @@ In this modification, I faced many unexpected challenges. Out of them, there wer
 <!--```- A summary of key topics you learned about```-->
 <!--```- What you hope to learn in the future after everything you've learned at BSE ```-->
 ## Summary
-For my final milestone, my ball-tracking robot can now track and follow the ball. For this milestone, I had to write code using Python in Visual Studio Code that will be able to follow the ball. This code tracks whether the ball is to the left or right of the robot and then follows it. Here's how my code works:
+For my final milestone, my ball-tracking robot can now track and follow the ball. For this milestone, I had to write code using Python in Visual Studio Code that would be able to follow the ball. This code tracks whether the ball is to the left or right of the robot and then follows it. Here's how my code works:
 
 <img width="872" height="492" alt="Screenshot 2025-07-10 at 11 58 31 AM" src="https://github.com/user-attachments/assets/324eb8c7-726c-4ed5-a1c0-e0e195f75dd8" />
 
-### Figure 5 Diagram of How the Code Works
+### Figure 5: Diagram of How the Code Works
 
 ## Chalenges
-A challenge I faced was that my robot kept turning left and right, which sometimes led to the ball-tracking robot hitting the ball off the table. I fixed this problem by making the code first turn left/right. Once it was in position, then it would turn forward. However, other than that, there were not any major setbacks unlike my other milestones, and it was quick compared to the other two. This was because most of the code was from the other milestones, and the only code I wrote was for the ball-following system.
+A challenge I faced was that my robot kept turning left and right, which sometimes led to the ball-tracking robot hitting the ball off the table. I fixed this problem by making the code first turn left/right. Once it was in position, it would turn forward. However, other than that, there were no major setbacks, unlike my other milestones, and it was quick compared to the other two. This was because most of the code was from the other milestones, and the only code I wrote was for the ball-following system.
 
 ## What I learned through the milestones:
 I learned a lot from BSE, including the basics of circuits, to setting up masks and contours for ball tracking. Here's a list of the few things I learned from BSE:
-1. I learned the basics of circuits such as the power source and ground. I learned the different types of wires and how to solder them to the circuit board. I also learned Ohm's Law, which states that Current is equal to Voltage over Resistance.
+1. I learned the basics of circuits, such as the power source and ground. I learned the different types of wires and how to solder them to the circuit board. I also learned Ohm's Law, which states that Current is equal to Voltage over Resistance.
 2. I learned about how to control DC motors with the L298N motor driver and how to control pins using the Raspberry Pi 4.
 3. I learned how to use the Picam and software like OpenCV to complete tasks like ball detection.
 4. I also learned about ultrasonic sensors, which I use in modification 1. I learned how to connect the ultrasonic sensor to breadboards, which are used to organize circuits.
@@ -79,15 +79,15 @@ My next steps would be to add a modification to my Ball Tracking Robot. This mod
 ## Summary
 For my second milestone, my objective was to create code that would allow my robot to track my red ball. This required many steps and some code using libraries such as OpenCV. Unlike the first milestone, which required barely any code, the second milestone was focused on coding. Here's how my code works:
 1. Import important libraries such as picamera2 for easy access to my camera, which is the picamera.
-2. Second, I had to set up my camera's format, configure, and start the camera.
-3. Third, I had to convert the original BGR (Blue, Green, Red) to HSV (Hue, Saturation, Value) color space because using an HSV color space makes isolating a certain color for ball tracking easier.
-4. Fourth, I had to create a mask. A mask allows me to isolate a certain color, for example, red. This is useful for me because I need to isolate red to track my red ball. A mask blackens out everything that is not within a certain color range. Here's a picture of the mask in action:
+2. Second, I had to set up my camera's format, configure it, and start the camera.
+3. Third, I had to convert the original BGR (Blue, Green, Red) to HSV (Hue, Saturation, Value) colour space because using an HSV colour space makes isolating a certain colour for ball tracking easier.
+4. Fourth, I had to create a mask. A mask allows me to isolate a certain colour, for example, red. This is useful for me because I need to isolate red to track my red ball. A mask blackens out everything that is not within a certain colour range. Here's a picture of the mask in action:
 
 <img width="1223" alt="Screenshot 2025-07-07 at 9 53 15 AM" src="https://github.com/user-attachments/assets/a3513fde-9e06-47e6-95a4-ef2e3dcf9b55" />
 
 ### Figure 4 Picture of the Picam Using A Mask
 
-5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are identified by noticing the sudden change in color. For example, the computer can detect the contours around my ball that is on top of a black table by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the specific coordinates of the ball by averaging the contour points. Here's a picture of the contours shown as green points:
+5. Fifth, I had to create contours, which are edges that are detected by the computer. These edges are identified by noticing the sudden colour change. For example, the computer can detect the contours around my ball that is on top of a black table by noticing the sudden change from red to black. This sudden change informs the computer that there is a contour. This contour is useful to me because I can find the specific coordinates of the ball by averaging the contour points. Here's a picture of the contours shown as green points:
 
    <img width="1256" alt="Screenshot 2025-07-07 at 9 55 16 AM" src="https://github.com/user-attachments/assets/52e43df9-cddf-472b-a6d8-092fc1434a11" />
 
@@ -100,7 +100,7 @@ For my second milestone, my objective was to create code that would allow my rob
 For my next steps, I will need to work on my third milestone, which allows the ball-tracking robot to move towards the ball while avoiding any obstacles in its way. This will be my last milestone unless I add any modifications. I will achieve this goal by using the coordinates I obtained from the second milestone to determine if the ball is to the right or left of the robot.
 
 ## Challenges:
-A major challenge I faced was getting the code to work. I had to change the code a lot because sometimes the color space wasn't being changed, and sometimes the color range was not quite right. However, I was able to create code that works, as shown below.
+A major challenge I faced was getting the code to work. I had to change the code a lot because sometimes the colour space wasn't being changed, and sometimes the colour range was not quite right. However, I was able to create code that works, as shown below.
 <!--
 ```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
@@ -114,9 +114,9 @@ v```- What needs to be completed before your final milestone ```
 -->
 # First Milestone
 ## Summary
-For my first milestone, I used Python to move the Ball Tracking Robot forward and backward using motors. Reaching this goal took a couple of steps:
+For my first milestone, I used Python to move the Ball Tracking Robot forward and backwards using motors. Reaching this goal took a couple of steps:
 
-1. My first step was to set up my Raspberry Pi 4. The goal of this step was to connect to the Pi remotely without connecting it to my computer with a lot of wires. This step made me follow a lot of instructions provided by Blue Stamp Engineering. I was sometimes confused about which wires went where; however, it was relatively easy.
+1. My first step was to set up my Raspberry Pi 4. The goal of this step was to connect to the Pi remotely without connecting it to my computer with a lot of wires. This step made me follow a lot of the instructions provided by Blue Stamp Engineering. I was sometimes confused about which wires went where; however, it was relatively easy.
 2. My second step was to build the base of my robot, which came in a small kit including a plastic base, two motors, two large wheels, one small rotating wheel, and a battery source. This also came with instructions, giving me small steps to build it.
 3. My third step was to wire everything together. I had to wire the L298N motor with the Raspberry Pi 4, which allowed me to program instructions that get sent by the Pi. I also had to connect the L298N driving motor to the two motors in my base. This required some soldering, which I had some unexpected difficulties with.
 4. My final step was to write some simple code that tested the functionality of my motors. This code was mostly from viewing and understanding previous Blue Stamp Engineering students who had done the same project as I. After a few minor mistakes, I successfully made my motors run, thus finishing my first milestone.
@@ -126,18 +126,18 @@ The Raspberry Pi 4 is a mini-computer that is powered by a USB-C source. Powerin
 Another component in the L298N Driving Motor is the H-Bridge, which is a fascinating system that allows the driving motor to control direction.
 
 <img width="652" height="352" alt="Screenshot 2025-07-17 at 10 20 10 AM" src="https://github.com/user-attachments/assets/62b3cb7c-24a1-4029-be90-299fa89fb447" />
-### Figure 2 Diagram of the L298N Driving Motor
+### Figure 2: Diagram of the L298N Driving Motor
 
 As you can see in the diagram, there are 4 switches, one GND, and one VCC. The power comes from the VCC, and if the top right and bottom left switches are on, the power flows in a counter-clockwise direction, making the motors spin in the same direction. However, if the top left and bottom right switches are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor to control the direction of the motor.
 
 <img width="942" alt="Screenshot 2025-07-07 at 11 58 07 AM" src="https://github.com/user-attachments/assets/7599743f-4bbe-407f-a6cb-58e955000324" />
-### Figure 1 Scemtatic of the Motors
+### Figure 1 Schematic of the Motors
 
 ## Challenges:
 Some challenges I faced were that my motor was not working because I mistakenly put the L298N power source into the VSS instead of the VS, which limited the power supply received, resulting in the motor not working. Another challenge I faced was that some of the wires that connected the L298N outputs to the motors broke off, which required me to resolder some of the wires. One problem that stood out to me was my SSH (a way of remotely coding onto my Raspberry Pi 4 without wires) disconnected many times. This stood out to me because I could not find a solution to this.
 
 ## My Next Steps:
-My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential for my Ball Tracking Robot. To complete milestone 2, I will have to use a PiCamera (a camera attachable to my Raspberry Pi) and OpenCV software. I will need to create a mask; a mask allows me to only see objects in a certain range of colors. This will enable me to track my ball because the mask will be in the same color range as my ball, which makes the ball one of the only objects visible to my PiCamera.
+My next goal is to finish milestone 2. Completing this milestone will allow me to track the ball, which is essential for my Ball Tracking Robot. To complete milestone 2, I will have to use a PiCamera (a camera attachable to my Raspberry Pi) and OpenCV software. I will need to create a mask; a mask allows me to only see objects in a certain range of colours. This will enable me to track my ball because the mask will be in the same colour range as my ball, which makes the ball one of the only objects visible to my PiCamera.
 
 <!--```**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**```
 
@@ -159,7 +159,7 @@ My next goal is to finish milestone 2. Completing this milestone will allow me t
 # Code
 ## Final Code (For Modification 1)
 ```
-# Importing Necessary Softwares
+# Importing Necessary Software
 import picamera2
 from time import sleep
 import os
@@ -176,7 +176,7 @@ ultrasonic_left = DistanceSensor(echo=17, trigger=4)
 ultrasonic_front = DistanceSensor(echo=9, trigger=10)
 ultrasonic_right = DistanceSensor(echo=22, trigger=27)
 
-# Giving Names to the motors, and the numbers are the pins on the raspberry pi
+# Giving Names to the motors, and the numbers are the pins on the Raspberry Pi
 # that the motors are connected to
 motor_left = Motor(forward=23,backward=24)
 motor_right = Motor(forward=26,backward=16)
