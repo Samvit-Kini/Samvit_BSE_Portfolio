@@ -15,7 +15,7 @@ HTML
 
 # Modification 1 
 ## Summary
-This modification allows my ball-tracking robot to avoid any obstacles in its path to the ball. This modification uses ultrasonic sensors to detect the distance of the closest object from the robot. Here's how my ultrasonic sensors work: they send out pulses of sound that we cannot hear, and detect the distance of the nearest object by measuring the time it takes for the echo to return and dividing it by the speed of sound. I use three of these ultrasonic sensors to find out if there are any objects other than the ball in the robot's path. If there is an object, I avoid it by using code to move around the obstacle.
+This modification enables my ball-tracking robot to navigate around obstacles in its path to the ball. This modification uses ultrasonic sensors to detect the distance of the closest object from the robot. Here's how my ultrasonic sensors work: they send out pulses of sound that we cannot hear, and detect the distance of the nearest object by measuring the time it takes for the echo to return and dividing it by the speed of sound. I use three of these ultrasonic sensors to find out if there are any objects other than the ball in the robot's path. If there is an object, I avoid it by using code to move around the obstacle.
 
 Here is a schematic of how I connected the ultrasonic sensors to my Raspberry Pi 4:
 
