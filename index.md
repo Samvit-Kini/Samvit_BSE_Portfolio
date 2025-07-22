@@ -126,6 +126,7 @@ The Raspberry Pi 4 is a mini-computer that is powered by a USB-C source. Powerin
 Another component in the L298N Driving Motor is the H-Bridge, which is a fascinating system that allows the driving motor to control direction.
 
 <img width="652" height="352" alt="Screenshot 2025-07-17 at 10 20 10 AM" src="https://github.com/user-attachments/assets/62b3cb7c-24a1-4029-be90-299fa89fb447" />
+
 ### Figure 2: Diagram of the L298N Driving Motor
 
 As you can see in the diagram, there are 4 switches, one GND, and one VCC. The power comes from the VCC, and if the top right and bottom left switches are on, the power flows in a counter-clockwise direction, making the motors spin in the same direction. However, if the top left and bottom right switches are on, the power flows in a clockwise direction, also making the motors spin in the same direction. This allows the L298N motor to control the direction of the motor.
