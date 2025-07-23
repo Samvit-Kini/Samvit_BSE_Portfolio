@@ -34,9 +34,10 @@ Here is the schematic of the case I built:
 ## Challenges
 In this modification, I faced many unexpected challenges. Out of them, two challenges stood out to me:
 
-1. The first challenge was that the Ball Tracking Robot kept moving too far in one direction. To fix this problem, I had to juggle around with my code and ensure my robot stopped moving after it fulfilled a certain goal. This challenge took me the longest amount of time, but I fixed the code.
+1. The first challenge was that the Ball Tracking Robot kept moving too far in one direction. To fix this problem, I had to juggle around with my code and ensure my robot stopped moving after it fulfilled a certain goal. This challenge took me the longest amount of time, but I fixed the code, by using an accelorometer. This allows me to detect accurately if I turn right 90 degrees, or moved back 3 meters.
 
 2. The second challenge that stood out to me was a bit of a setback. The setback was that my Raspberry Pi board stopped working. The reason is unknown, but I had to restart setting up the board. This required me to rewire many things and forced me to repeat the downloading process. The downloading took a long time, forcing me to waste a day at Bluestamp setting up my Pi.
+
 
 ## Here's a demo of my Ball Tracking Robot
 
