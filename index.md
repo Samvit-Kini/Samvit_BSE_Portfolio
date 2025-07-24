@@ -171,7 +171,18 @@ from picamera2 import Picamera2
 import  RPi.GPIO as GPIO
 import time
 from gpiozero import DistanceSensor, Motor
+from lsm6ds3 import *
 GPIO.setmode(GPIO.BOARD)
+gravity = 0
+# The settings for the accellerometer
+imu = LSM6DS3(ACC_ODR=ACC_ODR_1_66_KHZ,
+              GYRO_ODR=GYRO_ODR_1_66_KHZ,
+              enable_acc=ENABLE_ACC_ALL_AXIS,
+              enable_gyro=ENABLE_GYRO_ALL_AXIS,
+              acc_interrupt=False,
+              gyro_interrupt=False,
+              acc_scale=ACC_SCALE_16G,
+              gyro_scale=GYRO_SCALE_2000DPS)
 
 # Giving Names to each of the Ultrasonic Sensors
 ultrasonic_left = DistanceSensor(echo=17, trigger=4)
@@ -194,13 +205,13 @@ last_x = 0
 
 # Writing functions for moving the robot, so I do not need to rewrite everything
 def move_backward(t):
-   motor_left.forward(0.6)
-   motor_right.forward(0.5)
+   motor_left.forward(0.5)
+   motor_right.forward(0.4)
    time.sleep(t)
-def stop_move(t):
+def stop_move():
    motor_left.stop()
    motor_right.stop()
-   time.sleep(t)
+
 def move_right(t):
    motor_left.backward(0.4)
    motor_right.forward(0.4)
@@ -210,8 +221,8 @@ def move_left(t):
    motor_right.backward(0.4)
    time.sleep(t)
 def move_forward(t):
-   motor_left.backward(0.6)
-   motor_right.backward(0.5)
+   motor_left.backward(0.5)
+   motor_right.backward(0.4)
    time.sleep(t)
 
 # Function that takes a picture, and find the coordinates of the ball
@@ -268,59 +279,122 @@ cam.start()
 # The minimum distance for the ultrasonic distance
 dis_min = 0.15
 # 90 degree turns
+min_speed = 0.3
+def right_speed(speed):
+    global min_speed
+    if speed > 0:
+        if speed > 1:
+            speed = 1
+        elif speed < min_speed:
+            speed = min_speed
+        motor_right.forward(speed)
+    else:
+        speed = -speed
+        if speed > 1:
+            speed = 1
+        elif speed < min_speed:
+            speed = min_speed
+        motor_right.backward(speed)
+
+def left_speed(speed):
+    global min_speed
+    if speed > 0:
+        if speed > 1:
+            speed = 1
+        elif speed < min_speed:
+            speed = min_speed
+        motor_left.forward(speed)
+    else:
+        speed = -speed
+        if speed > 1:
+            speed = 1
+        elif speed < min_speed:
+            speed = min_speed
+        motor_left.backward(speed)
+
+
 def right_90():
-   move_right(0.6)
+    loops = 0
+    target = 90
+    angle = 0
+    while loops < 10:
+        control = target - angle
+        control =  control / target
+        right_speed(control)
+        left_speed(-control)
+        speed = imu.getGyroData()[2]
+        angle = angle + speed * 0.02
+        time.sleep(0.02)
+        if abs(target - angle) < 10:
+            loops += 1
+        else:
+            loops = 0
+    stop_move()
 def left_90():
-   move_left(0.6)
+    loops = 0
+    target = -90
+    angle = 0
+    while loops < 10:
+        control = target - angle
+        control =  control / target
+        right_speed(-control)
+        left_speed(control)
+        speed = imu.getGyroData()[2]
+        angle = angle + speed * 0.02
+        time.sleep(0.02)
+        if abs(target - angle) < 10:
+            loops += 1
+        else:
+            loops = 0
+    stop_move()
 
 # Set of instructions to avoid obstacles in the front
 def avoid_f():
-    move_backward(2)
+    move_backward(0.5)
     right_90()
-    move_forward(1)
+    move_forward(0.5)
     left_90()
-    move_forward(2)
+    move_forward(0.5)
 # Set of instructions to avoid obstacles at the right
 def avoid_r():
-    move_backward(1)
+    move_backward(0.5)
     left_90()
     move_forward(0.5)
     right_90()
-    move_right(0.1)
-    move_forward(1)
+    move_forward(0.5)
 # Set of instructions to avoid obstacles at the left
 def avoid_l():
-    move_backward(1)
+    move_backward(0.5)
     right_90()
     move_forward(0.5)
     left_90()
-    move_left(0.1)
-    move_forward(1)
+    move_forward(0.5)
 
 def track_ball(): 
         x_cord, area = find_ball()
-        if x_cord > 0.65:
+        if x_cord > 0.85:
             # Center the ball to the middle of the picam
-            while x_cord > 0.65:
+            while x_cord > 0.85:
                 x_cord,_ = find_ball()
                 move_left(0)
-        elif x_cord < 0.35:
-            while x_cord < 0.35:
+        elif x_cord < 0.15:
+            while x_cord < 0.15:
                 x_cord,_ = find_ball()
                 move_right(0)
         else:
             # When centered move forward
-            if area < 7500:
+            if average < 5000:
                 move_forward(0)
             else:
                 # Ball too close, stop
-                stop_move(0)
-
+                stop_move()
+average = 0
 while True:
     # Variables we need
     x_cord, area = find_ball()
+    average = (area/3) + (average*2)/3
     # If ball is not too close
-    if area < 7500:
+    if average < 5000:
         # Check for, and avoid obstacls
         if ultrasonic_front.distance < dis_min: 
             avoid_f()
@@ -331,9 +405,11 @@ while True:
         else:
             # No obstacls = track the ball
             track_ball()
+            
     else:
         # ball too close, stop
-        stop_move(0)
+        stop_move()
+
 cv2.destroyAllWindows()
  ```
 
